@@ -1,0 +1,28 @@
+﻿<Window x:Class="De.HsFlensburg.ClientApp042.Ui.Desktop.NewClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels;assembly=Logic.Ui"
+        mc:Ignorable="d"
+        Title="NewClientWindow" Height="450" Width="800">
+    <!--<Window.Resources>
+        <ViewModels:NewClientWindowViewModel x:Key="myViewModel"></ViewModels:NewClientWindowViewModel>
+    </Window.Resources>-->
+    <Window.DataContext>
+        <Binding Source="{StaticResource ViewModelLocator}"
+                 Path="TheNewClientWindowViewModel"></Binding>
+    </Window.DataContext>
+
+    <UniformGrid Columns="2">
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Right">Identifier</Label>
+        <TextBox Text="{Binding Identifier}"
+                 VerticalAlignment="Center"></TextBox>
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Right">Name</Label>
+        <TextBox Text="{Binding Name}"
+                 VerticalAlignment="Center"></TextBox>
+        <Button Command="{Binding AddClient}">Kunde erstellen</Button>
+    </UniformGrid>
+</Window>
