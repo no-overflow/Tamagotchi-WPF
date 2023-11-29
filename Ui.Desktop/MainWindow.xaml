@@ -6,12 +6,7 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp042.Ui.Desktop"
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="500">
-    <!--<Window.Resources>
-        <viewModels:MainWindowViewModel
-            x:Key="myViewModel">
-        </viewModels:MainWindowViewModel>
-    </Window.Resources>-->
+        Title="MainWindow" Height="300" Width="550">
 
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}"
@@ -23,44 +18,82 @@
         </Binding>
     </Window.IsEnabled>
 
+    <Window.Resources>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushHealth">
+            <GradientStop Color="#FFDA0000" Offset="0" />
+            <GradientStop Color="Maroon" Offset="2.0" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushHunger">
+            <GradientStop Color="#FF4B7DFF" Offset="0" />
+            <GradientStop Color="#FF0047FF" Offset="2.0" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushHappiness">
+            <GradientStop Color="#FFFFDA4B" Offset="0" />
+            <GradientStop Color="#FFFF994B" Offset="2.0" />
+        </LinearGradientBrush>
+    </Window.Resources>
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <UniformGrid Grid.Column="0" Rows="4" Columns="2">
-            <Label VerticalAlignment="Center"
-               HorizontalAlignment="Right">
-                Identifier
-            </Label>
-            <TextBox VerticalAlignment="Center"
-                 Text="{Binding ElementName=myDataGrid,
-                Path=SelectedItem.Id}">
-            </TextBox>
-            <Label VerticalAlignment="Center"
-                HorizontalAlignment="Right">
-                Name</Label>
-            <TextBox VerticalAlignment="Center"
-                 Text="{Binding ElementName=myDataGrid,
-                Path=SelectedItem.Name}">
-            </TextBox>
-            <Button Command="{Binding RenameValueInModelCommand}">
-                Rename first Item
-            </Button>
-            <Button Command="{Binding OpenNewClientWindowCommand}">
-                OpenClientWindow
-            </Button>
-            <Button Command="{Binding SaveCommand}">
-                Save
-            </Button>
-            <Button Command="{Binding LoadCommand}">
-                Load
-            </Button>
+
+        <Label FontWeight="Bold" Foreground="Maroon" BorderThickness="2" BorderBrush="#FFDA0000" Grid.Column="0" Grid.Row="0">Health ❤️</Label>
+        <ProgressBar Minimum="0" Maximum="100" Value="80"
+                     Grid.Column="1" Grid.Row="0"
+                     Foreground="{StaticResource gradientBrushHealth}"
+                     Background="LightGray"/>
+
+        <Label FontWeight="Bold" Foreground="#FF0047FF" BorderThickness="2" BorderBrush="#FF4B7DFF" Grid.Column="2" Grid.Row="0">Hunger 🍕</Label>
+        <ProgressBar Minimum="0" Maximum="100" Value="60"
+             Grid.Column="3" Grid.Row="0"
+             Foreground="{StaticResource gradientBrushHunger}"
+             Background="LightGray"/>
+
+        <Label FontWeight="Bold" Foreground="Maroon" BorderThickness="2" BorderBrush="#FFDA0000" Grid.Column="0" Grid.Row="0">Health ❤️</Label>
+        <ProgressBar Minimum="0" Maximum="100" Value="44"
+             Grid.Column="1" Grid.Row="0"
+             Foreground="{StaticResource gradientBrushHealth}"
+             Background="LightGray"/>
+
+        <Label FontWeight="Bold" Foreground="#FFFF994B" BorderThickness="2" BorderBrush="#FFFFDA4B" Grid.Column="4" Grid.Row="0">Happiness 🔥</Label>
+        <ProgressBar Minimum="0" Maximum="100" Value="80"
+             Grid.Column="5" Grid.Row="0"
+             Foreground="{StaticResource gradientBrushHappiness}"
+             Background="LightGray"/>
+
+        <Image Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="15" Source="{Binding Path=MyTamagotchi.BindableTamagotchiImage}"/>
+
+
+        <Button Content="Feed" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Button Content="Play" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top"/>
+        <UniformGrid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2" Rows="3" Columns="2">
+            <Label FontWeight="Bold">Name</Label>
+            <TextBox/>
+            <Label FontWeight="Bold">Age</Label>
+            <Label>10 years</Label>
+            <Label FontWeight="Bold">Birthday</Label>
+            <Label>10.12</Label>
         </UniformGrid>
-        <DataGrid Grid.Column="1"
-                  Name="myDataGrid"
-                  ItemsSource="{Binding Path=MyList}"
-                  >
-        </DataGrid>
+        <UniformGrid Grid.Column="5" Grid.Row="2" Rows="3">
+            <Label FontWeight="Bold" HorizontalAlignment="Center">Status</Label>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">Your Tamagotchi is healthy.</TextBlock>
+            <Button Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </UniformGrid>
+
+
+
     </Grid>
 </Window>
