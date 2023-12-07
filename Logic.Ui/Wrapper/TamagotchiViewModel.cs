@@ -16,26 +16,24 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
     public class TamagotchiViewModel : ViewModelBase<Tamagotchi>
     {
 
-        public string name;
-        private String Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
+        public String Name { get { return Model.Name; } set { Model.Name = value; } }
 
-        private int hunger;
-        public int Hunger { get { return hunger; } set { hunger = value; OnPropertyChanged("Hunger"); } }
+        public int Hunger { get { return Model.Hunger; } set { Model.Hunger = value; } }
+        public int Health { get { return Model.Health; } set { Model.Health = value; } }
 
-        private int health;
-        public int Health { get { return health; } set { health = value; OnPropertyChanged("health"); } }
+        public int Happiness { get { return Model.Happiness; } set { Model.Happiness = value; } }
 
-        private int happiness;
-        public int Happiness { get { return happiness; } set { happiness = value; OnPropertyChanged("happiness"); } }
+        public int Age { get { return Model.Age; } set { Model.Age = value; } }
 
-        private int age;
-        public int Age { get { return age; } set { age = value; OnPropertyChanged("age"); } }
+        public DateTime OldLogin { get { return Model.OldLogin; } set { Model.OldLogin = value; } }
 
-        public DateTime lastLogin;
-        public DateTime LastLogin { get; set; }
+        public DateTime NewLogin { get { return Model.NewLogin; } set { Model.NewLogin = value; } } 
 
-       
-        
+        public Boolean Alive { get; set; }
+
+        public String InfoText { get { return Model.InfoText; } set { Model.InfoText = value; } }
+
+
         public BitmapImage BindableTamagotchiImage
         {
             get

@@ -13,7 +13,7 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
 {
     public class ModelFileHandler
     {
-        public ClientCollection ReadModelFromFile(string path)
+        public Tamagotchi ReadModelFromFile(string path)
         {
             IFormatter formatter = new BinaryFormatter();
             Stream streamLoad = new FileStream(
@@ -21,13 +21,27 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 FileMode.Open,
                 FileAccess.Read,
                 FileShare.Read);
-            ClientCollection loadedCollection =
-                (ClientCollection)formatter.Deserialize(
-                    streamLoad);
-            streamLoad.Close();
-            return loadedCollection;
+            try 
+            {
+                Tamagotchi loadedCollection =
+                    (Tamagotchi)formatter.Deserialize(
+                        streamLoad);
+                streamLoad.Close();
+                return loadedCollection;
+            } catch(Exception e)
+            {
+                Tamagotchi MyTamagotchi = new Tamagotchi();
+                MyTamagotchi.Hunger = 0;
+                MyTamagotchi.Health = 0;
+                MyTamagotchi.Name = "Tamagotchi";
+                MyTamagotchi.OldLogin = MyTamagotchi.NewLogin;
+                MyTamagotchi.NewLogin = DateTime.Now;
+                streamLoad.Close();
+                return MyTamagotchi;
+            }
+            
         }
-        public void WriteModelToFile(string path, ClientCollection model)
+        public void WriteModelToFile(string path, Tamagotchi model)
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(

@@ -72,9 +72,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ViewModels\Images\path1247.png">
+    <Resource Include="ViewModels\Images\default.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ViewModels\Images\tamagotchi_0.png" />
+    <Content Include="ViewModels\Images\tamagotchi_10.png" />
+    <Content Include="ViewModels\Images\tamagotchi_100.png" />
+    <Content Include="ViewModels\Images\tamagotchi_20.png" />
+    <Content Include="ViewModels\Images\tamagotchi_30.png" />
+    <Content Include="ViewModels\Images\tamagotchi_40.png" />
+    <Content Include="ViewModels\Images\tamagotchi_50.png" />
+    <Content Include="ViewModels\Images\tamagotchi_60.png" />
+    <Content Include="ViewModels\Images\tamagotchi_70.png" />
+    <Content Include="ViewModels\Images\tamagotchi_80.png" />
+    <Content Include="ViewModels\Images\tamagotchi_90.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
