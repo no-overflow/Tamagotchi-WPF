@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
 {
-    public class Game
+    [Serializable]
+    public class Game : INotifyPropertyChanged
     {
         private int genNumber;
-        public int GenNumber { get { return genNumber; } set { genNumber = value; } }
+        public int GenNumber { get { return genNumber; } set { genNumber = value; OnPropertyChanged("GenNumber"); } }
 
         private int nextNumber;
-        public int NextNumber { get { return nextNumber; } set { nextNumber = value; } }
+        public int NextNumber { get { return nextNumber; } set { nextNumber = value; OnPropertyChanged("NextNumber"); } }
 
 
-
-        
         public Game()
         { 
             var newGame = new Game();
@@ -35,9 +35,19 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
                 nextNumber = rnd.Next(1, 10);
             }   
         }
-        public bool IsGenNumberLower()
+        
+        private void OnPropertyChanged(string propertyName)
         {
-            return (genNumber < nextNumber);
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+                handler(
+                    this,
+                    new PropertyChangedEventArgs(propertyName));
         }
+
+        [field: NonSerialized]
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
     }
 }

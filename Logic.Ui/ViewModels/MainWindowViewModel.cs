@@ -83,6 +83,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             {
                 MyTamagotchi.Hunger += 10;
                 MyTamagotchi.Happiness += 5;
+                MyTamagotchi.Health += 2;
                 UpdateTamagotchi();
             }
         }
@@ -92,9 +93,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             if (MyTamagotchi.Health < 50)
             {
                 MyTamagotchi.Health = 100;
-                MyTamagotchi.Happiness += 50;
+                MyTamagotchi.Happiness += 20;
                 UpdateTamagotchi();
-
             }
         }
 
@@ -121,32 +121,27 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         {
             TimeSpan loginDifference = DateTime.Now.Subtract(MyTamagotchi.LoginTime);
             TimeSpan ageDifference = DateTime.Now.Subtract(MyTamagotchi.Birthday);
-            Console.WriteLine("Difference in total hours: " + loginDifference.TotalHours);
-            int sinceLogin = (int)(loginDifference.TotalHours);
+            int sinceLogin = (int)(loginDifference.TotalMinutes);
 
             //calculate age
-            int ageInDays = (int)(ageDifference.TotalDays);
-            MyTamagotchi.Age = ageInDays;
+            MyTamagotchi.Age = (int)(ageDifference.TotalDays);
 
             //calculate Health
-            MyTamagotchi.Health -= (sinceLogin / 10);
+            MyTamagotchi.Health -= (sinceLogin / 5);
 
             //calculate Hunger
-            MyTamagotchi.Hunger -= (sinceLogin / 10);
+            MyTamagotchi.Hunger -= (sinceLogin / 5);
 
             //calculate Happiness
-            MyTamagotchi.Happiness -= (sinceLogin / 10);
+            MyTamagotchi.Happiness -= (sinceLogin / 5);
         }
 
         private void CheckData()
         {
-            MyTamagotchi.Health = Math.Max(0, MyTamagotchi.Health);
-            MyTamagotchi.Health = Math.Min(100, MyTamagotchi.Health);
-            MyTamagotchi.Hunger = Math.Max(0, MyTamagotchi.Hunger);
-            MyTamagotchi.Hunger = Math.Min(100, MyTamagotchi.Hunger);
+            MyTamagotchi.Health = MyTamagotchi.Health < 0 ? 0 : (MyTamagotchi.Health > 100 ? 100 : MyTamagotchi.Health);
+            MyTamagotchi.Hunger = MyTamagotchi.Hunger < 0 ? 0 : (MyTamagotchi.Hunger > 100 ? 100 : MyTamagotchi.Hunger);
             MyTamagotchi.Hunger = 10 * (int)Math.Floor(MyTamagotchi.Hunger / 10.0);
-            MyTamagotchi.Happiness = Math.Max(0, MyTamagotchi.Happiness);
-            MyTamagotchi.Happiness = Math.Min(100, MyTamagotchi.Happiness);
+            MyTamagotchi.Happiness = MyTamagotchi.Happiness < 0 ? 0 : (MyTamagotchi.Happiness > 100 ? 100 : MyTamagotchi.Happiness);
         }
 
         private void CheckHealth()

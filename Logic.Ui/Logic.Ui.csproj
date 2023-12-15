@@ -55,6 +55,7 @@
     <Compile Include="ViewModels\NewClientWindowViewModel.cs" />
     <Compile Include="Wrapper\ClientCollectionViewModel.cs" />
     <Compile Include="Wrapper\ClientViewModel.cs" />
+    <Compile Include="Wrapper\GameViewModel.cs" />
     <Compile Include="Wrapper\TamagotchiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
