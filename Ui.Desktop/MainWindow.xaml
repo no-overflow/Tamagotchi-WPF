@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp042.Ui.Desktop"
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="550">
+        Title="MainWindow" Height="400" Width="600">
 
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}"
@@ -33,13 +33,67 @@
             <GradientStop Color="#FFFFDA4B" Offset="0" />
             <GradientStop Color="#FFFF994B" Offset="2.0" />
         </LinearGradientBrush>
+
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbow">
+            <GradientStop Color="#FF4BFFD8" Offset="0" />
+            <GradientStop Color="#FFFF00D4" Offset="2.0" />
+        </LinearGradientBrush>
+
+        <!--https://gist.github.com/alimbada/3083937-->
+            
+
+            <Style x:Key="BlueButton" TargetType="{x:Type Button}">
+
+            <Setter Property="Background" Value="#FF1572CE"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="10 5"/>
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="BorderThickness" Value="0.7" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Border
+                                x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" />
+
+                                <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Margin="{TemplateBinding Padding}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                RecognizesAccessKey="True" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="OpacityMask" Value="#AA888888"/>
+                                    <Setter Property="Margin" Value="2 1" />
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                    
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Foreground" Value="#ADADAD"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+    
+
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="#1E90FF">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -50,46 +104,59 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label FontWeight="Bold" Foreground="Maroon" BorderThickness="2" BorderBrush="#FFDA0000" Grid.Column="0" Grid.Row="0">Health ❤️</Label>
+        <Label FontWeight="Bold" Foreground="White" Background="#FFDA0000" BorderThickness="2" BorderBrush="#FFDA0000" Grid.Column="0" Grid.Row="0">Health ❤️</Label>
         <ProgressBar Minimum="0" Maximum="100" Value="{Binding MyTamagotchi.Health}"
                      Grid.Column="1" Grid.Row="0"
                      Foreground="{StaticResource gradientBrushHealth}"
-                     Background="LightGray"/>
+                     Background="#FFFFD0D0"/>
 
-        <Label FontWeight="Bold" Foreground="#FF0047FF" BorderThickness="2" BorderBrush="#FF4B7DFF" Grid.Column="2" Grid.Row="0">Hunger 🍕</Label>
+        <Label FontWeight="Bold" Foreground="White" Background="#FF4B7DFF" BorderThickness="2" BorderBrush="#FF4B7DFF" Grid.Column="2" Grid.Row="0">Hunger 🍕</Label>
         <ProgressBar Minimum="0" Maximum="100" Value="{Binding MyTamagotchi.Hunger}"
              Grid.Column="3" Grid.Row="0"
              Foreground="{StaticResource gradientBrushHunger}"
-             Background="LightGray"/>
+             Background="#FFBCCEFF"/>
 
-        
-        <Label FontWeight="Bold" Foreground="#FFFF994B" BorderThickness="2" BorderBrush="#FFFFDA4B" Grid.Column="4" Grid.Row="0">Happiness 🔥</Label>
+
+        <Label FontWeight="Bold" Foreground="White" Background="#FFFFDA4B" BorderThickness="2" BorderBrush="#FFFFDA4B" Grid.Column="4" Grid.Row="0">Happiness 🔥</Label>
         <ProgressBar Minimum="0" Maximum="100" Value="{Binding MyTamagotchi.Happiness}"
              Grid.Column="5" Grid.Row="0"
              Foreground="{StaticResource gradientBrushHappiness}"
-             Background="LightGray"/>
+             Background="#FFFFF6D4"/>
+        
 
         <Image Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="15" Source="{Binding Path=MyTamagotchi.BindableTamagotchiImage}"/>
 
+        <UniformGrid Grid.Column="0" Grid.Row="2" Rows="2" Columns="2">
+            <Button Style="{StaticResource BlueButton}" Background="#FF9D1515" Content="🍓" Command="{Binding FeedStrawberryCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="#FF2A9D15" Content="🥦" Command="{Binding FeedBrocolliCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="#FFE6A325" Content="🧀" Command="{Binding FeedCheeseCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="{StaticResource gradientBrushRainbow}" Content="🍭" Command="{Binding FeedLollipopCommand}"/>
+        </UniformGrid>
 
-        <Button Content="Feed" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Command="{Binding FeedCommand}"/>
-        <Button Content="Reset" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Command="{Binding ResetCommand}"/>
-        
-        <Button Content="Play" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top"/>
-        
-        
+        <UniformGrid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Rows="4" Columns="2">
+            <Button Style="{StaticResource BlueButton}" Command="{Binding StartGameCommand}" Content="Start Game" Grid.ColumnSpan="2"/>
+            <Label Content="{Binding MyGame.GenNumber}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Style="{StaticResource BlueButton}" Command="{Binding LowerCommand}" Content="Lower"/>
+            <Button Style="{StaticResource BlueButton}" Command="{Binding HigherCommand}" Content="Higher"/>
+            <Label Content="Attempts" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="{Binding MyGame.Attempts}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="Points" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="{Binding MyGame.Points}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </UniformGrid>
+
+
         <UniformGrid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2" Rows="3" Columns="2">
-            <Label FontWeight="Bold">Name</Label>
-            <TextBox Text="{Binding MyTamagotchi.Name}"/>
-            <Label FontWeight="Bold">Age (days)</Label>
-            <Label Content="{Binding MyTamagotchi.Age}"></Label>
-            <Label FontWeight="Bold">Birthday</Label>
-            <Label Content="{Binding MyTamagotchi.Birthday}"></Label>
+            <Label VerticalAlignment="Center" FontWeight="Bold">Name</Label>
+            <TextBox VerticalAlignment="Center" Text="{Binding MyTamagotchi.Name}"/>
+            <Label VerticalAlignment="Center" FontWeight="Bold">Age (days)</Label>
+            <Label VerticalAlignment="Center" Content="{Binding MyTamagotchi.Age}"></Label>
+            <Label VerticalAlignment="Center" FontWeight="Bold">Birthday</Label>
+            <Label VerticalAlignment="Center" Content="{Binding MyTamagotchi.Birthday}"></Label>
         </UniformGrid>
         <UniformGrid Grid.Column="5" Grid.Row="2" Rows="3">
-            <Label FontWeight="Bold" HorizontalAlignment="Center">Status</Label>
+            <Label FontWeight="Bold" HorizontalAlignment="Center">Health Status</Label>
             <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Text="{Binding MyTamagotchi.InfoText}"></TextBlock>
-            <Button Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding MedicinCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding MedicinCommand}"/>
         </UniformGrid>
 
 

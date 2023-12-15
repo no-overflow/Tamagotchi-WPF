@@ -17,6 +17,7 @@ using System.Xml.Linq;
 using System.IO;
 using System.Collections;
 using System.Threading;
+using System.Security.Cryptography;
 
 namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
 {
@@ -25,12 +26,22 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         public ModelFileHandler modelFileHandler;
         private string pathForSerialization;
         public ICommand FeedCommand { get; }
+
+        public ICommand FeedStrawberryCommand { get; }
+        public ICommand FeedBrocolliCommand { get; }
+        public ICommand FeedCheeseCommand { get; }
+        public ICommand FeedLollipopCommand { get; }
+
         public ICommand MedicinCommand { get; }
+        public ICommand StartGameCommand { get; }
+        public ICommand LowerCommand { get; }
+        public ICommand HigherCommand { get; }
 
         public ICommand ResetCommand { get; }
 
 
         public TamagotchiViewModel MyTamagotchi { get; set; }
+        public GameViewModel MyGame { get; set; }
        
 
         public MainWindowViewModel()
@@ -46,9 +57,20 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
                 Model = modelFileHandler.ReadModelFromFile(pathForSerialization)
             };
 
+            MyGame = new GameViewModel();
 
-            FeedCommand = new RelayCommand(FeedTamagotchi);
+
             MedicinCommand = new RelayCommand(GiveMedicin);
+
+            FeedStrawberryCommand = new RelayCommand(FeedStrawberry);
+            FeedBrocolliCommand = new RelayCommand(FeedBrocolli);
+            FeedCheeseCommand = new RelayCommand(FeedCheese);
+            FeedLollipopCommand = new RelayCommand(FeedLollipop);
+
+            StartGameCommand = new RelayCommand(StartGame);
+            LowerCommand = new RelayCommand(LowerGuess);
+            HigherCommand = new RelayCommand(HigherGuess);
+
             ResetCommand = new RelayCommand(ResetTamagotchi);
 
             CalculateData();
@@ -77,17 +99,50 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             Console.WriteLine("Birthday: " + MyTamagotchi.Birthday);
         }
 
-        private void FeedTamagotchi()
+        
+        private void FeedStrawberry()
         {
             if (MyTamagotchi.Hunger < 100)
             {
-                MyTamagotchi.Hunger += 10;
+                MyTamagotchi.Hunger += 15;
+                MyTamagotchi.Happiness += 5;
+                MyTamagotchi.Health += 5;
+                UpdateTamagotchi();
+            }
+        }
+
+        private void FeedBrocolli()
+        {
+            if (MyTamagotchi.Hunger < 100)
+            {
+                MyTamagotchi.Hunger += 20;
+                MyTamagotchi.Happiness += 5;
+                MyTamagotchi.Health += 5;
+                UpdateTamagotchi();
+            }
+        }
+
+        private void FeedCheese()
+        {
+            if (MyTamagotchi.Hunger < 100)
+            {
+                MyTamagotchi.Hunger += 20;
                 MyTamagotchi.Happiness += 5;
                 MyTamagotchi.Health += 2;
                 UpdateTamagotchi();
             }
         }
 
+        private void FeedLollipop()
+        {
+            if (MyTamagotchi.Hunger < 100)
+            {
+                MyTamagotchi.Hunger += 10;
+                MyTamagotchi.Happiness += 20;
+                MyTamagotchi.Health -= 5;
+                UpdateTamagotchi();
+            }
+        }
         private void GiveMedicin()
         {
             if (MyTamagotchi.Health < 50)
@@ -155,6 +210,73 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
                 MyTamagotchi.InfoText = "Your Tamagotchi is healthy.";
             }
         }
+
+
+
+
+        private void StartGame()
+        {
+            if (!MyGame.GameStarted)
+            {
+                MyGame.GameStarted = true;
+                MyGame.Attempts = 5;
+                MyGame.Points = 0;
+                GenerateNumbers();
+            }
+        }
+
+        private void LowerGuess()
+        {
+            if (MyGame.Attempts > 0 && MyGame.GameStarted == true)
+            {
+                if (MyGame.GenNumber > MyGame.NextNumber)
+                {
+                    MyGame.Points++;
+                    MyTamagotchi.Happiness += 5;
+                }
+                MyGame.Attempts--;
+                GenerateNumbers();
+            } else
+            {
+                MyGame.GameStarted = false;
+            }
+        }
+
+        private void HigherGuess()
+        {
+            if (MyGame.Attempts > 0 && MyGame.GameStarted == true)
+            {
+                if (MyGame.GenNumber < MyGame.NextNumber)
+                {
+                    MyGame.Points++;
+                    MyTamagotchi.Happiness += 5;
+                }
+                MyGame.Attempts--;
+                GenerateNumbers();
+            } else
+            {
+                MyGame.GameStarted = false;
+            }
+        }
+
+
+        public void GenerateNumbers()
+        {
+            Random rnd = new Random();
+            MyGame.GenNumber = rnd.Next(1, 10);
+            MyGame.NextNumber = rnd.Next(1, 10);
+        
+            while (MyGame.GenNumber == MyGame.NextNumber)
+            {
+                MyGame.NextNumber = rnd.Next(1, 10);
+            }
+            Console.WriteLine(MyGame.GenNumber);
+            Console.WriteLine(MyGame.NextNumber);
+            Console.WriteLine(MyGame.Attempts);
+            Console.WriteLine(MyGame.Points);
+        }
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

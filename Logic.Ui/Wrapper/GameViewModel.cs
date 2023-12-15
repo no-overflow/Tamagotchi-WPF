@@ -14,6 +14,10 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
         public int NextNumber { get { return Model.NextNumber; } set { Model.NextNumber = value; OnPropertyChanged("NextNumber"); } }
 
+        public int Attempts { get { return Model.Attempts; } set { Model.Attempts = value; OnPropertyChanged("Attempts"); } }
+        public Boolean GameStarted { get { return Model.GameStarted; } set { Model.GameStarted = value; OnPropertyChanged("GameStarted"); } }
+        public int Points { get { return Model.Points; } set { Model.Points = value; OnPropertyChanged("Points"); } }
+
         public override void NewModelAssigned()
         {
             throw new NotImplementedException();

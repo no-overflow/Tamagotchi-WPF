@@ -16,26 +16,16 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
         private int nextNumber;
         public int NextNumber { get { return nextNumber; } set { nextNumber = value; OnPropertyChanged("NextNumber"); } }
 
+        private int attempts;
+        public int Attempts { get { return attempts; } set { attempts = value; OnPropertyChanged("Attempts"); } }
 
-        public Game()
-        { 
-            var newGame = new Game();
-            GenerateNumbers();
+        private bool gameStarted;
+        public Boolean GameStarted { get { return gameStarted; } set { gameStarted = value; OnPropertyChanged("GameStarted"); } }
 
-        }
+        private int points;
+        public int Points { get { return points; } set { points = value; OnPropertyChanged("Points"); } }
 
-        public void GenerateNumbers()
-        {
-            Random rnd = new Random();
-            genNumber = rnd.Next(1, 10);
-            nextNumber = rnd.Next(1, 10);
 
-            while (genNumber == nextNumber)
-            {
-                nextNumber = rnd.Next(1, 10);
-            }   
-        }
-        
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -47,7 +37,5 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
 
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
-
-
     }
 }
