@@ -90,5 +90,8 @@
     <Content Include="ViewModels\Images\tamagotchi_80.png" />
     <Content Include="ViewModels\Images\tamagotchi_90.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Data\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

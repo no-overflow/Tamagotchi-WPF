@@ -47,9 +47,18 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         public MainWindowViewModel()
         {  
             modelFileHandler = new ModelFileHandler();
-            pathForSerialization = Environment.GetFolderPath(
-                Environment.SpecialFolder.MyDocuments) +
-                "\\ClientCollectionSerialization\\MyTamagotchi.cc";
+            //pathForSerialization = Environment.GetFolderPath(
+            //Environment.SpecialFolder.MyDocuments) +
+            //"\\ClientCollectionSerialization\\MyTamagotchi.cc";
+
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
+            Console.WriteLine(projectDirectory);
+            Console.WriteLine(Environment.GetFolderPath(
+            Environment.SpecialFolder.MyDocuments) +
+            "\\ClientCollectionSerialization\\MyTamagotchi.cc");
+
+            pathForSerialization = projectDirectory;
 
 
             MyTamagotchi = new TamagotchiViewModel
@@ -159,6 +168,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Images"));
             string imagePath = "tamagotchi_"+MyTamagotchi.Hunger+".png";
             string fullPath = Path.Combine(projectDirectory, imagePath);
+            Console.WriteLine(fullPath);
 
             MyTamagotchi.TamagotchiImage = System.Drawing.Image.FromFile(fullPath);
         }
