@@ -23,14 +23,14 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
         private int happiness;
         public int Happiness { get { return happiness; } set { happiness = value; OnPropertyChanged("Happiness"); } }
 
-        private int age;
-        public int Age { get { return age; } set { age = value; OnPropertyChanged("Age"); } }
+        private long age;
+        public long Age { get { return age; } set { age = value; OnPropertyChanged("Age"); } }
 
-        private DateTime oldLogin;
-        public DateTime OldLogin { get { return oldLogin; } set { oldLogin = value; OnPropertyChanged("OldLogin"); } }
 
-        private DateTime newLogin;
-        public DateTime NewLogin { get { return newLogin; } set { newLogin = value; OnPropertyChanged("NewLogin"); } }
+        private DateTime loginTime;
+        public DateTime LoginTime { get { return loginTime; } set { loginTime = value; OnPropertyChanged("LoginTime"); } }
+        private DateTime birthday;
+        public DateTime Birthday { get { return birthday; } set { birthday = value; OnPropertyChanged("Birthday"); } }
 
         private string infoText;
         public String InfoText { get { return infoText; } set { infoText = value; OnPropertyChanged("InfoText"); } }

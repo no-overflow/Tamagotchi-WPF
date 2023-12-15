@@ -73,15 +73,18 @@
 
 
         <Button Content="Feed" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Command="{Binding FeedCommand}"/>
+        <Button Content="Reset" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Command="{Binding ResetCommand}"/>
         
         <Button Content="Play" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top"/>
+        
+        
         <UniformGrid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2" Rows="3" Columns="2">
             <Label FontWeight="Bold">Name</Label>
             <TextBox Text="{Binding MyTamagotchi.Name}"/>
-            <Label FontWeight="Bold">Age</Label>
-            <Label>10 years</Label>
+            <Label FontWeight="Bold">Age (days)</Label>
+            <Label Content="{Binding MyTamagotchi.Age}"></Label>
             <Label FontWeight="Bold">Birthday</Label>
-            <Label>10.12</Label>
+            <Label Content="{Binding MyTamagotchi.Birthday}"></Label>
         </UniformGrid>
         <UniformGrid Grid.Column="5" Grid.Row="2" Rows="3">
             <Label FontWeight="Bold" HorizontalAlignment="Center">Status</Label>

@@ -16,28 +16,50 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
         public Tamagotchi ReadModelFromFile(string path)
         {
             IFormatter formatter = new BinaryFormatter();
-            Stream streamLoad = new FileStream(
+            Stream streamLoad = null;
+            try
+            {
+                streamLoad = new FileStream(
                 path,
                 FileMode.Open,
                 FileAccess.Read,
                 FileShare.Read);
-            try 
-            {
                 Tamagotchi loadedCollection =
                     (Tamagotchi)formatter.Deserialize(
                         streamLoad);
-                streamLoad.Close();
+
                 return loadedCollection;
-            } catch(Exception e)
+            }
+            catch (FileNotFoundException)
             {
                 Tamagotchi MyTamagotchi = new Tamagotchi();
                 MyTamagotchi.Hunger = 0;
                 MyTamagotchi.Health = 0;
                 MyTamagotchi.Name = "Tamagotchi";
-                MyTamagotchi.OldLogin = MyTamagotchi.NewLogin;
-                MyTamagotchi.NewLogin = DateTime.Now;
-                streamLoad.Close();
+                MyTamagotchi.LoginTime = DateTime.Now;
+                MyTamagotchi.Birthday = DateTime.Now;
+                Console.WriteLine(MyTamagotchi.LoginTime);
+
                 return MyTamagotchi;
+            }
+            catch (Exception ex)
+            {
+                Tamagotchi MyTamagotchi = new Tamagotchi();
+                MyTamagotchi.Hunger = 0;
+                MyTamagotchi.Health = 0;
+                MyTamagotchi.Name = "Tamagotchi";
+                MyTamagotchi.LoginTime = DateTime.Now;
+                MyTamagotchi.Birthday = DateTime.Now;
+                Console.WriteLine(MyTamagotchi.LoginTime);
+
+                return MyTamagotchi;
+            }
+            finally
+            {
+                if (streamLoad != null)
+                {
+                    streamLoad.Close();
+                }
             }
             
         }

@@ -16,22 +16,22 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
     public class TamagotchiViewModel : ViewModelBase<Tamagotchi>
     {
 
-        public String Name { get { return Model.Name; } set { Model.Name = value; } }
+        public String Name { get { return Model.Name; } set { Model.Name = value; OnPropertyChanged("Name"); } }
 
-        public int Hunger { get { return Model.Hunger; } set { Model.Hunger = value; } }
-        public int Health { get { return Model.Health; } set { Model.Health = value; } }
+        public int Hunger { get { return Model.Hunger; } set { Model.Hunger = value; OnPropertyChanged("Hunger"); } }
+        public int Health { get { return Model.Health; } set { Model.Health = value; OnPropertyChanged("Health"); } }
 
-        public int Happiness { get { return Model.Happiness; } set { Model.Happiness = value; } }
+        public int Happiness { get { return Model.Happiness; } set { Model.Happiness = value; OnPropertyChanged("Happiness"); } }
 
-        public int Age { get { return Model.Age; } set { Model.Age = value; } }
+        public long Age { get { return Model.Age; } set { Model.Age = value; OnPropertyChanged("Age"); } }
 
-        public DateTime OldLogin { get { return Model.OldLogin; } set { Model.OldLogin = value; } }
-
-        public DateTime NewLogin { get { return Model.NewLogin; } set { Model.NewLogin = value; } } 
+        public DateTime LoginTime { get { return Model.LoginTime; } set { Model.LoginTime = value; OnPropertyChanged("LoginTime"); } }
+       
+        public DateTime Birthday { get { return Model.Birthday; } set { Model.Birthday = value; OnPropertyChanged("Birthday"); } }
 
         public Boolean Alive { get; set; }
 
-        public String InfoText { get { return Model.InfoText; } set { Model.InfoText = value; } }
+        public String InfoText { get { return Model.InfoText; } set { Model.InfoText = value; OnPropertyChanged("InfoText"); } }
 
 
         public BitmapImage BindableTamagotchiImage
