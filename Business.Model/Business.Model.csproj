@@ -42,8 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\Client.cs" />
-    <Compile Include="BusinessObjects\ClientCollection.cs" />
     <Compile Include="BusinessObjects\Game.cs" />
     <Compile Include="BusinessObjects\Tamagotchi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

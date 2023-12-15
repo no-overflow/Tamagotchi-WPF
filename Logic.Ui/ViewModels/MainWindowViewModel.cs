@@ -1,5 +1,4 @@
 ﻿using De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects;
-using De.HsFlensburg.ClientApp042.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp042.Services.MessageBus;
 using De.HsFlensburg.ClientApp042.Services.SerializationService;

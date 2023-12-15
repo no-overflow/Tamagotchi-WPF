@@ -38,9 +38,7 @@ C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogra
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\bin\Debug\Services.MessageBus.pdb
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\bin\Debug\Services.SerializationService.pdb
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\Ui.Desktop.csproj.AssemblyReference.cache
-C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\NewClientWindow.baml
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\MainWindow.g.cs
-C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\NewClientWindow.g.cs
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\App.g.cs
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\Ui.Desktop_MarkupCompile.cache
