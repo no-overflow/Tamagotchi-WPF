@@ -46,16 +46,9 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         public MainWindowViewModel()
         {  
             modelFileHandler = new ModelFileHandler();
-            //pathForSerialization = Environment.GetFolderPath(
-            //Environment.SpecialFolder.MyDocuments) +
-            //"\\ClientCollectionSerialization\\MyTamagotchi.cc";
-
+            
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
-            Console.WriteLine(projectDirectory);
-            Console.WriteLine(Environment.GetFolderPath(
-            Environment.SpecialFolder.MyDocuments) +
-            "\\ClientCollectionSerialization\\MyTamagotchi.cc");
 
             pathForSerialization = projectDirectory;
 
@@ -269,7 +262,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         }
 
 
-        public void GenerateNumbers()
+        private void GenerateNumbers()
         {
             Random rnd = new Random();
             MyGame.GenNumber = rnd.Next(1, 10);

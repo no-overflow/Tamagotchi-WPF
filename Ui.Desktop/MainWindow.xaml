@@ -36,7 +36,7 @@
 
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbow">
             <GradientStop Color="#FF4BFFD8" Offset="0" />
-            <GradientStop Color="#FFFF00D4" Offset="2.0" />
+            <GradientStop Color="#FFFF00D4" Offset="1.3" />
         </LinearGradientBrush>
 
         <!--https://gist.github.com/alimbada/3083937-->
