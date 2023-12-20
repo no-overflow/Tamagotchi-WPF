@@ -15,7 +15,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 {
     public class TamagotchiViewModel : ViewModelBase<Tamagotchi>
     {
-
         public String Name { get { return Model.Name; } set { Model.Name = value; OnPropertyChanged("Name"); } }
 
         public int Hunger { get { return Model.Hunger; } set { Model.Hunger = value; OnPropertyChanged("Hunger"); } }
@@ -78,6 +77,41 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public override void NewModelAssigned()
         {
             throw new NotImplementedException();
+        }
+
+        public void FeedStrawberry()
+        {
+            Model.FeedStrawberry();
+        }
+
+        public void FeedBrocolli()
+        {
+            Model.FeedBrocolli();
+        }
+
+        public void FeedCheese()
+        {
+            Model.FeedCheese();
+        }
+
+        public void FeedLollipop()
+        {
+            Model.FeedLollipop();
+        }
+
+        public void GiveMedicin()
+        {
+            Model.GiveMedicin();
+        }
+
+        public void CalculateData()
+        {
+            Model.CalculateData();
+        }
+
+        public void UpdateTamagotchi()
+        {
+            Model.UpdateTamagotchi();
         }
     }
 }

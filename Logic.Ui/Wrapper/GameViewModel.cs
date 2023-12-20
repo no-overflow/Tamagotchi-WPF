@@ -22,5 +22,20 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         {
             throw new NotImplementedException();
         }
+
+        public void StartGame()
+        {
+            Model.StartGame();
+        }
+
+        public void LowerGuess()
+        {
+            Model.StartGame();
+        }
+
+        public void HigherGuess()
+        {
+            Model.StartGame();
+        }
     }
 }
