@@ -17,6 +17,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public int Attempts { get { return Model.Attempts; } set { Model.Attempts = value; OnPropertyChanged("Attempts"); } }
         public Boolean GameStarted { get { return Model.GameStarted; } set { Model.GameStarted = value; OnPropertyChanged("GameStarted"); } }
         public int Points { get { return Model.Points; } set { Model.Points = value; OnPropertyChanged("Points"); } }
+        private TamagotchiViewModel MyTamagotchi;
 
         public override void NewModelAssigned()
         {
@@ -25,17 +26,66 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
         public void StartGame()
         {
-            Model.StartGame();
+            if (!GameStarted)
+            {
+                GameStarted = true;
+                Attempts = 5;
+                Points = 0;
+                GenerateNumbers();
+            }
         }
 
         public void LowerGuess()
         {
-            Model.StartGame();
+            if (Attempts > 0 && GameStarted == true)
+            {
+                if (GenNumber > NextNumber)
+                {
+                    Points++;
+                    MyTamagotchi.Happiness += 5;
+                }
+                Attempts--;
+                GenerateNumbers();
+            }
+            else
+            {
+                GameStarted = false;
+            }
         }
 
         public void HigherGuess()
         {
-            Model.StartGame();
+            if (Attempts > 0 && GameStarted == true)
+            {
+                if (GenNumber < NextNumber)
+                {
+                    Points++;
+                    MyTamagotchi.Happiness += 5;
+                }
+                Attempts--;
+                GenerateNumbers();
+            }
+            else
+            {
+                GameStarted = false;
+            }
+        }
+
+
+        private void GenerateNumbers()
+        {
+            Random rnd = new Random();
+            GenNumber = rnd.Next(1, 10);
+            NextNumber = rnd.Next(1, 10);
+
+            while (GenNumber == NextNumber)
+            {
+                NextNumber = rnd.Next(1, 10);
+            }
+            Console.WriteLine(GenNumber);
+            Console.WriteLine(NextNumber);
+            Console.WriteLine(Attempts);
+            Console.WriteLine(Points);
         }
     }
 }

@@ -42,6 +42,18 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
 
                 return MyTamagotchi;
             }
+            catch (ArgumentNullException)
+            {
+                Tamagotchi MyTamagotchi = new Tamagotchi();
+                MyTamagotchi.Hunger = 0;
+                MyTamagotchi.Health = 0;
+                MyTamagotchi.Name = "Tamagotchi";
+                MyTamagotchi.LoginTime = DateTime.Now;
+                MyTamagotchi.Birthday = DateTime.Now;
+                Console.WriteLine(MyTamagotchi.LoginTime);
+
+                return MyTamagotchi;
+            }
             catch (Exception ex)
             {
                 Tamagotchi MyTamagotchi = new Tamagotchi();
