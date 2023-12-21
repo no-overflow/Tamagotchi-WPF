@@ -24,6 +24,11 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             throw new NotImplementedException();
         }
 
+        public GameViewModel()
+        {
+            MyTamagotchi = new TamagotchiViewModel();
+        }
+
         public void StartGame()
         {
             if (!GameStarted)
