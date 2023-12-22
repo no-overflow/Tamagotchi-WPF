@@ -17,6 +17,7 @@ using System.IO;
 using System.Collections;
 using System.Threading;
 using System.Security.Cryptography;
+using De.HsFlensburg.ClientApp042.Logic.Ui.MessageBusMessages;
 
 namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
 {
@@ -36,12 +37,17 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         public ICommand LowerCommand { get; }
         public ICommand HigherCommand { get; }
 
-        public ICommand ResetCommand { get; }
+        public ICommand OpenEditTamagotchiWindowCommand { get; }
 
 
         public TamagotchiViewModel MyTamagotchi { get; set; }
         public GameViewModel MyGame { get; set; }
-       
+
+
+        private void OpenEditTamagotchiWindowMethod()
+        {
+            ServiceBus.Instance.Send(new OpenEditTamagotchiWindowMessage());
+        }
 
         public MainWindowViewModel()
         {  
@@ -60,6 +66,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
 
             MyGame = new GameViewModel(MyTamagotchi);
 
+            OpenEditTamagotchiWindowCommand = new RelayCommand(OpenEditTamagotchiWindowMethod);
 
             MedicinCommand = new RelayCommand(MyTamagotchi.GiveMedicin);
 

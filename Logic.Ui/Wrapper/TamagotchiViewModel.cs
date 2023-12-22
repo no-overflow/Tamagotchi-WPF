@@ -20,7 +20,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
         public int Hunger { get { return Model.Hunger; } set { Model.Hunger = value; OnPropertyChanged("Hunger"); } }
         public int Health { get { return Model.Health; } set { Model.Health = value; OnPropertyChanged("Health"); } }
-
         public int Happiness { get { return Model.Happiness; } set { Model.Happiness = value; OnPropertyChanged("Happiness"); } }
 
         public long Age { get { return Model.Age; } set { Model.Age = value; OnPropertyChanged("Age"); } }
@@ -32,6 +31,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public Boolean Alive { get; set; }
 
         public String InfoText { get { return Model.InfoText; } set { Model.InfoText = value; OnPropertyChanged("InfoText"); } }
+        public String Color { get { return Model.Color; } set { Model.Color = value; OnPropertyChanged("Color"); } }
 
 
         public BitmapImage BindableTamagotchiImage

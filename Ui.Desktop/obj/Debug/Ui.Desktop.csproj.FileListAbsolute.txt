@@ -52,3 +52,5 @@ C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogra
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\Ui.Desktop.csproj.CopyComplete
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\Ui.Desktop.exe
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\Ui.Desktop.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\EditTamagotchiWindow.g.cs
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Ui.Desktop\obj\Debug\EditTamagotchiWindow.baml

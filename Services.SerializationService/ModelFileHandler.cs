@@ -35,17 +35,8 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 Tamagotchi MyTamagotchi = new Tamagotchi();
                 MyTamagotchi.Hunger = 0;
                 MyTamagotchi.Health = 0;
-                MyTamagotchi.Name = "Tamagotchi";
-                MyTamagotchi.LoginTime = DateTime.Now;
-                MyTamagotchi.Birthday = DateTime.Now;
-
-                return MyTamagotchi;
-            }
-            catch (ArgumentNullException)
-            {
-                Tamagotchi MyTamagotchi = new Tamagotchi();
-                MyTamagotchi.Hunger = 0;
-                MyTamagotchi.Health = 0;
+                MyTamagotchi.Happiness = 0;
+                MyTamagotchi.Color = "Blue";
                 MyTamagotchi.Name = "Tamagotchi";
                 MyTamagotchi.LoginTime = DateTime.Now;
                 MyTamagotchi.Birthday = DateTime.Now;
@@ -57,6 +48,8 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 Tamagotchi MyTamagotchi = new Tamagotchi();
                 MyTamagotchi.Hunger = 0;
                 MyTamagotchi.Health = 0;
+                MyTamagotchi.Happiness = 0;
+                MyTamagotchi.Color = "Blue";
                 MyTamagotchi.Name = "Tamagotchi";
                 MyTamagotchi.LoginTime = DateTime.Now;
                 MyTamagotchi.Birthday = DateTime.Now;

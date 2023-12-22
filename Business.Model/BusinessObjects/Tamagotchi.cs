@@ -42,6 +42,9 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
         private bool alive;
         public Boolean Alive { get; set; }
 
+        private string color;
+        public String Color { get { return color; } set { color = value; OnPropertyChanged("Color"); } }
+
 
         private void OnPropertyChanged(string propertyName)
         {
