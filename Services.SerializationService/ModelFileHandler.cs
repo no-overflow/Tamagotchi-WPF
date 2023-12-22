@@ -38,7 +38,6 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 MyTamagotchi.Name = "Tamagotchi";
                 MyTamagotchi.LoginTime = DateTime.Now;
                 MyTamagotchi.Birthday = DateTime.Now;
-                Console.WriteLine(MyTamagotchi.LoginTime);
 
                 return MyTamagotchi;
             }
@@ -50,7 +49,6 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 MyTamagotchi.Name = "Tamagotchi";
                 MyTamagotchi.LoginTime = DateTime.Now;
                 MyTamagotchi.Birthday = DateTime.Now;
-                Console.WriteLine(MyTamagotchi.LoginTime);
 
                 return MyTamagotchi;
             }
@@ -62,7 +60,6 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 MyTamagotchi.Name = "Tamagotchi";
                 MyTamagotchi.LoginTime = DateTime.Now;
                 MyTamagotchi.Birthday = DateTime.Now;
-                Console.WriteLine(MyTamagotchi.LoginTime);
 
                 return MyTamagotchi;
             }

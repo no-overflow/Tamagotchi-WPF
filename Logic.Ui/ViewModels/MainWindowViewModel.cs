@@ -58,7 +58,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
                 Model = modelFileHandler.ReadModelFromFile(pathForSerialization)
             };
 
-            MyGame = new GameViewModel();
+            MyGame = new GameViewModel(MyTamagotchi);
 
 
             MedicinCommand = new RelayCommand(MyTamagotchi.GiveMedicin);

@@ -86,6 +86,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public TamagotchiViewModel()
         {
             modelFileHandler = new ModelFileHandler();
+           
         }
 
         public void UpdateTamagotchi()
@@ -96,7 +97,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             SetImage();
 
             string workingDirectory = Environment.CurrentDirectory;
-            string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi1.cc"));
+            string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
 
             pathForSerialization = projectDirectory;
 
@@ -175,7 +176,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Images"));
             string imagePath = "tamagotchi_" + Hunger + ".png";
             string fullPath = Path.Combine(projectDirectory, imagePath);
-            Console.WriteLine(fullPath);
 
             TamagotchiImage = System.Drawing.Image.FromFile(fullPath);
         }

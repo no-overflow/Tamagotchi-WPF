@@ -24,9 +24,9 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             throw new NotImplementedException();
         }
 
-        public GameViewModel()
+        public GameViewModel(TamagotchiViewModel MyTamagotchi1)
         {
-            MyTamagotchi = new TamagotchiViewModel();
+            MyTamagotchi = MyTamagotchi1;
         }
 
         public void StartGame()
@@ -48,6 +48,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 {
                     Points++;
                     MyTamagotchi.Happiness += 5;
+                    
                 }
                 Attempts--;
                 GenerateNumbers();
@@ -66,6 +67,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 {
                     Points++;
                     MyTamagotchi.Happiness += 5;
+                    
                 }
                 Attempts--;
                 GenerateNumbers();
