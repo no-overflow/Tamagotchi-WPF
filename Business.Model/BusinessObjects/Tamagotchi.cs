@@ -42,6 +42,7 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
         private bool alive;
         public Boolean Alive { get; set; }
         
+
         private string tamagotchiColor;
         public String TamagotchiColor { get { return tamagotchiColor; } set { tamagotchiColor = value; OnPropertyChanged("TamagotchiColor"); } }
 

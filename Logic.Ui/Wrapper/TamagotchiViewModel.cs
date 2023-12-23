@@ -86,7 +86,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public TamagotchiViewModel()
         {
             modelFileHandler = new ModelFileHandler();
-            MyColors = new ColorsViewModel();
+            //MyColors = new ColorsViewModel();
 
         }
 
@@ -118,7 +118,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             Console.WriteLine("InfoText: " + InfoText);
             Console.WriteLine("Birthday: " + Birthday);
 
-            Console.WriteLine("TamagotchiColor: " + MyColors.TamagotchiColor);
+            Console.WriteLine("TamagotchiColor: " + Model.TamagotchiColor);
         }
 
 

@@ -42,7 +42,7 @@
         <!--https://gist.github.com/alimbada/3083937-->
             <Style x:Key="BlueButton" TargetType="{x:Type Button}">
 
-            <Setter Property="Background" Value="{Binding MyTamagotchi.MyColors.ButtonColor}"/>
+            <Setter Property="Background" Value="{Binding MyTamagotchi.Model.ButtonColor}"/>
                 <Setter Property="Foreground" Value="White"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -87,7 +87,7 @@
 
     </Window.Resources>
 
-    <Grid Background="{Binding MyTamagotchi.MyColors.BackgroundColor}">
+    <Grid Background="{Binding MyTamagotchi.Model.BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>

@@ -23,7 +23,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         public EditTamagotchiWindowViewModel(TamagotchiViewModel EditMyTamagotchi)
         {
             MyTamagotchi = EditMyTamagotchi;
-            ChangeColorToRedCommand = new RelayCommand(MyTamagotchi.MyColors.ChangeColorToRedMethod);
+            //ChangeColorToRedCommand = new RelayCommand(MyTamagotchi.ChangeColorToRedMethod);
 
 
 

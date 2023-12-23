@@ -61,15 +61,18 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
 
             pathForSerialization = projectDirectory;
 
-            MyColors = new ColorsViewModel();
+            
             MyTamagotchi = new TamagotchiViewModel
             {
                 Model = modelFileHandler.ReadModelFromFile(pathForSerialization)
             };
 
             MyGame = new GameViewModel(MyTamagotchi);
-            
-           
+            MyColors = new ColorsViewModel(MyTamagotchi);
+
+            Console.WriteLine("MWVM TamagotchiColor1: " + MyTamagotchi.Model.TamagotchiColor);
+            Console.WriteLine("MWVM BackgroundColor1: " + MyTamagotchi.Model.BackgroundColor);
+
 
             OpenEditTamagotchiWindowCommand = new RelayCommand(OpenEditTamagotchiWindowMethod);
 
@@ -87,8 +90,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             MyTamagotchi.CalculateData();
             MyTamagotchi.UpdateTamagotchi();
 
-            Console.WriteLine("MWVM TamagotchiColor: "+MyTamagotchi.MyColors.TamagotchiColor);
-            Console.WriteLine("MWVM BackgroundColor: " + MyTamagotchi.BackgroundColor);
+            Console.WriteLine("MWVM TamagotchiColor: "+MyTamagotchi.Model.TamagotchiColor);
+            Console.WriteLine("MWVM BackgroundColor: " + MyTamagotchi.Model.BackgroundColor);
             //MyTamagotchi.LoginTime = DateTime.Now;
         }
 

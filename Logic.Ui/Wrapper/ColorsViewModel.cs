@@ -15,9 +15,15 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public String BackgroundColor { get { return Model.BackgroundColor; } set { Model.BackgroundColor = value; OnPropertyChanged("BackgroundColor"); } }
         public String ButtonColor { get { return Model.ButtonColor; } set { Model.ButtonColor = value; OnPropertyChanged("ButtonColor"); } }
 
+        private TamagotchiViewModel MyTamagotchi;
         public override void NewModelAssigned()
         {
             throw new NotImplementedException();
+        }
+
+        public ColorsViewModel(TamagotchiViewModel MyTamagotchi1)
+        {
+            MyTamagotchi = MyTamagotchi1;
         }
 
         public void ChangeColorToRedMethod()
