@@ -14,13 +14,13 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui
     public class ViewModelLocator
     {
         public MainWindowViewModel TheMainWindowViewModel { get; set; }
-        public EditTamagotchiWindowViewModel TheEditTamagotchiWindowView { get; set; }
+        public EditTamagotchiWindowViewModel TheEditTamagotchiWindowViewModel { get; set; }
 
 
         public ViewModelLocator()
         {
             TheMainWindowViewModel = new MainWindowViewModel();
-            TheEditTamagotchiWindowView = new EditTamagotchiWindowViewModel(TheMainWindowViewModel.MyTamagotchi);
+            TheEditTamagotchiWindowViewModel = new EditTamagotchiWindowViewModel(TheMainWindowViewModel.MyTamagotchi);
         }
     }
 }

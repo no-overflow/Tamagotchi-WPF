@@ -41,9 +41,15 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
 
         private bool alive;
         public Boolean Alive { get; set; }
+        
+        private string tamagotchiColor;
+        public String TamagotchiColor { get { return tamagotchiColor; } set { tamagotchiColor = value; OnPropertyChanged("TamagotchiColor"); } }
 
-        private string color;
-        public String Color { get { return color; } set { color = value; OnPropertyChanged("Color"); } }
+        private string backgroundColor;
+        public String BackgroundColor { get { return backgroundColor; } set { backgroundColor = value; OnPropertyChanged("BackgroundColor"); } }
+        private string buttonColor;
+        public String ButtonColor { get { return buttonColor; } set { buttonColor = value; OnPropertyChanged("ButtonColor"); } }
+
 
 
         private void OnPropertyChanged(string propertyName)

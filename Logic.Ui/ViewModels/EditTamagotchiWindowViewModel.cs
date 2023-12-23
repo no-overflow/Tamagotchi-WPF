@@ -7,29 +7,29 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
 {
     public class EditTamagotchiWindowViewModel : INotifyPropertyChanged
     {
-        public TamagotchiViewModel MyTamagotchiViewModel { get; set; }
+        public TamagotchiViewModel MyTamagotchi { get; set; }
         public ICommand EditTamagotchiColorCommand { get; }
+        public ICommand ChangeColorToRedCommand { get; }
 
-       
 
-        public EditTamagotchiWindowViewModel(TamagotchiViewModel MyTamagotchi)
+        public EditTamagotchiWindowViewModel(TamagotchiViewModel EditMyTamagotchi)
         {
-            EditTamagotchiColorCommand = new RelayCommand(EditTamagotchiColorMethod);
-            MyTamagotchiViewModel = MyTamagotchi;
-            Console.WriteLine(MyTamagotchiViewModel.Name);
+            MyTamagotchi = EditMyTamagotchi;
+            ChangeColorToRedCommand = new RelayCommand(MyTamagotchi.MyColors.ChangeColorToRedMethod);
 
-             
+
+
         }
-        private void EditTamagotchiColorMethod()
-        {
-            
-        }
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 

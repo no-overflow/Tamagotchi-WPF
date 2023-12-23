@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -53,6 +54,7 @@
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\EditTamagotchiWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Wrapper\ColorsViewModel.cs" />
     <Compile Include="Wrapper\GameViewModel.cs" />
     <Compile Include="Wrapper\TamagotchiViewModel.cs" />
   </ItemGroup>

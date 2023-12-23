@@ -6,32 +6,104 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp042.Ui.Desktop"
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="EditTamagotchiWindow" Height="300" Width="300">
+        Title="EditTamagotchiWindow" Height="300" Width="370">
 
         <Window.DataContext>
             <Binding Source="{StaticResource ViewModelLocator}"
-             Path="TheEditTamagotchiWindowView"></Binding>
+             Path="TheEditTamagotchiWindowViewModel"></Binding>
         </Window.DataContext>
 
         <Window.IsEnabled>
             <Binding Source="{StaticResource MessageListener}" Path="BindableProperty">
             </Binding>
         </Window.IsEnabled>
+    <Window.Resources>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbow">
+            <GradientStop Color="#FFFF4B4B" Offset="0" />
+            <GradientStop Color="#FFFF8100" Offset="0.2" />
+            <GradientStop Color="#FFFFD400" Offset="0.4" />
+            <GradientStop Color="#FF7BFF00" Offset="0.6" />
+            <GradientStop Color="#FF00FFDA" Offset="0.7" />
+            <GradientStop Color="#FF7200FF" Offset="1.0" />
+        </LinearGradientBrush>
 
-    <Grid Background="#1E90FF">
+        
+        <!--https://gist.github.com/alimbada/3083937-->
+        <Style x:Key="BlueButton" TargetType="{x:Type Button}">
+
+            <Setter Property="Background" Value="{Binding MyTamagotchi.MyColors.ButtonColor}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10 5"/>
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="BorderThickness" Value="0.7" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border
+                        x:Name="Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}" />
+
+                            <ContentPresenter
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        Margin="{TemplateBinding Padding}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        RecognizesAccessKey="True" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="OpacityMask" Value="#AA888888"/>
+                                <Setter Property="Margin" Value="2 1" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderThickness" Value="0"/>
+
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+    <Grid Background="{Binding MyTamagotchi.MyColors.BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Content="{Binding MyTamagotchiViewModel.Name}" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Content="{Binding MyTamagotchiViewModel.Health}" Grid.Row="1" Grid.ColumnSpan="2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <!--<Label VerticalAlignment="Center" FontWeight="Bold">Name</Label>
-        <TextBox VerticalAlignment="Center" Text="{Binding MyTamagotchiViewModel.Name}"/>-->
+        <Label FontSize="20" Content="{Binding MyTamagotchi.Name}" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <UniformGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Rows="2" Columns="2">
+            <Label Content="Name" Grid.Row="1" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding MyTamagotchi.Name}" Height="30" Width="120" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="Current Color" Grid.Row="1" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Background="{Binding MyTamagotchi.MyColors.TamagotchiColor}" Height="30" Width="120" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </UniformGrid>
+
+        <UniformGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Rows="2" Columns="4" Margin="5">
+            <Label Content="Change Color" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Style="{StaticResource BlueButton}" Background="Red" Content="Red" Command="{Binding EditTamagotchiColorCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="Orange" Foreground="Black" Content="Orange" Command="{Binding EditTamagotchiColorCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="Yellow" Foreground="Black" Content="Yellow" Command="{Binding EditTamagotchiColorCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="Green" Content="Green" Command="{Binding EditTamagotchiColorCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="Blue" Content="Blue" Command="{Binding EditTamagotchiColorCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="DarkViolet" Content="Violet" Command="{Binding EditTamagotchiColorCommand}"/>
+            <Button Style="{StaticResource BlueButton}" Background="{StaticResource gradientBrushRainbow}" Foreground="Black" Content="Rainbow" Command="{Binding EditTamagotchiColorCommand}"/>
+        </UniformGrid>
     </Grid>
-</Window>
+</Window> 

@@ -42,6 +42,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
 
         public TamagotchiViewModel MyTamagotchi { get; set; }
         public GameViewModel MyGame { get; set; }
+        public ColorsViewModel MyColors { get; set; }
+        
 
 
         private void OpenEditTamagotchiWindowMethod()
@@ -55,16 +57,19 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
+            string projectDirectory2 = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyColors.cc"));
 
             pathForSerialization = projectDirectory;
 
-
+            MyColors = new ColorsViewModel();
             MyTamagotchi = new TamagotchiViewModel
             {
                 Model = modelFileHandler.ReadModelFromFile(pathForSerialization)
             };
 
             MyGame = new GameViewModel(MyTamagotchi);
+            
+           
 
             OpenEditTamagotchiWindowCommand = new RelayCommand(OpenEditTamagotchiWindowMethod);
 
@@ -81,6 +86,9 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
 
             MyTamagotchi.CalculateData();
             MyTamagotchi.UpdateTamagotchi();
+
+            Console.WriteLine("MWVM TamagotchiColor: "+MyTamagotchi.MyColors.TamagotchiColor);
+            Console.WriteLine("MWVM BackgroundColor: " + MyTamagotchi.BackgroundColor);
             //MyTamagotchi.LoginTime = DateTime.Now;
         }
 

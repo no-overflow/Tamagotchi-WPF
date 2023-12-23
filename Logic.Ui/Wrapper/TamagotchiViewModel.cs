@@ -31,8 +31,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public Boolean Alive { get; set; }
 
         public String InfoText { get { return Model.InfoText; } set { Model.InfoText = value; OnPropertyChanged("InfoText"); } }
-        public String Color { get { return Model.Color; } set { Model.Color = value; OnPropertyChanged("Color"); } }
 
+        public ColorsViewModel MyColors { get; set; }
 
         public BitmapImage BindableTamagotchiImage
         {
@@ -86,7 +86,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public TamagotchiViewModel()
         {
             modelFileHandler = new ModelFileHandler();
-           
+            MyColors = new ColorsViewModel();
+
         }
 
         public void UpdateTamagotchi()
@@ -98,12 +99,14 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
+            
 
             pathForSerialization = projectDirectory;
 
             modelFileHandler.WriteModelToFile(
                 pathForSerialization,
                 Model);
+            
 
             Console.WriteLine("------ Update Tamagotchi ------");
             Console.WriteLine("Name: " + Name);
@@ -114,6 +117,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             Console.WriteLine("Happiness: " + Happiness);
             Console.WriteLine("InfoText: " + InfoText);
             Console.WriteLine("Birthday: " + Birthday);
+
+            Console.WriteLine("TamagotchiColor: " + MyColors.TamagotchiColor);
         }
 
 

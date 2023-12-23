@@ -40,11 +40,9 @@
         </LinearGradientBrush>
 
         <!--https://gist.github.com/alimbada/3083937-->
-            
-
             <Style x:Key="BlueButton" TargetType="{x:Type Button}">
 
-            <Setter Property="Background" Value="#FF1572CE"/>
+            <Setter Property="Background" Value="{Binding MyTamagotchi.MyColors.ButtonColor}"/>
                 <Setter Property="Foreground" Value="White"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -89,7 +87,7 @@
 
     </Window.Resources>
 
-    <Grid Background="#1E90FF">
+    <Grid Background="{Binding MyTamagotchi.MyColors.BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
@@ -148,7 +146,7 @@
 
         <UniformGrid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2" Rows="3" Columns="2">
             <Label VerticalAlignment="Center" FontWeight="Bold">Name</Label>
-            <TextBox VerticalAlignment="Center" Text="{Binding MyTamagotchi.Name}"/>
+            <Label VerticalAlignment="Center" Content="{Binding MyTamagotchi.Name}"></Label>
             <Label VerticalAlignment="Center" FontWeight="Bold">Age (days)</Label>
             <Label VerticalAlignment="Center" Content="{Binding MyTamagotchi.Age}"></Label>
             <Label VerticalAlignment="Center" FontWeight="Bold">Birthday</Label>
