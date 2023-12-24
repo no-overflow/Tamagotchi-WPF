@@ -76,9 +76,9 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
         public void ChangeColorToRainbowMethod()
         {
-            MyTamagotchi.Model.TamagotchiColor = "DarkViolet";
-            MyTamagotchi.Model.BackgroundColor = "#820dff";
-            MyTamagotchi.Model.ButtonColor = "#5b00bd";
+            MyTamagotchi.Model.TamagotchiColor = "Rainbow";
+            MyTamagotchi.Model.BackgroundColor = "RainbowBackground";
+            MyTamagotchi.Model.ButtonColor = "RainbowButton";
             MyTamagotchi.UpdateTamagotchi();
         }
     }

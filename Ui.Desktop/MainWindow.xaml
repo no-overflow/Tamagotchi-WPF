@@ -34,15 +34,44 @@
             <GradientStop Color="#FFFF994B" Offset="2.0" />
         </LinearGradientBrush>
 
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbow">
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushLollipop">
             <GradientStop Color="#FF4BFFD8" Offset="0" />
             <GradientStop Color="#FFFF00D4" Offset="1.3" />
         </LinearGradientBrush>
 
+        
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbow">
+            <GradientStop Color="#FFFF4B4B" Offset="0" />
+            <GradientStop Color="#FFFF8100" Offset="0.2" />
+            <GradientStop Color="#FFFFD400" Offset="0.4" />
+            <GradientStop Color="#FF7BFF00" Offset="0.6" />
+            <GradientStop Color="#FF00FFDA" Offset="0.7" />
+            <GradientStop Color="#FF7200FF" Offset="1.0" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbowButton">
+            <GradientStop Color="#FFFF2B2B" Offset="0" />
+            <GradientStop Color="#FFFF8100" Offset="0.1" />
+            <GradientStop Color="#FFFFD400" Offset="0.3" />
+            <GradientStop Color="#FF3AFF00" Offset="0.5" />
+            <GradientStop Color="#FF00B5FF" Offset="0.6" />
+            <GradientStop Color="#FF7200FF" Offset="0.9" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbowBackground">
+            <GradientStop Color="#FFFF8282" Offset="0" />
+            <GradientStop Color="#FFF0912F" Offset="0.1" />
+            <GradientStop Color="#FFFFDC32" Offset="0.3" />
+            <GradientStop Color="#FF84FF5F" Offset="0.5" />
+            <GradientStop Color="#FF4ECCFF" Offset="0.6" />
+            <GradientStop Color="#FFA65EFF" Offset="0.9" />
+        </LinearGradientBrush>
+
+
         <!--https://gist.github.com/alimbada/3083937-->
             <Style x:Key="MyButton" TargetType="{x:Type Button}">
 
-            <Setter Property="Background" Value="{Binding MyTamagotchi.Model.ButtonColor}"/>
+            <Setter Property="Background" Value="{Binding MyTamagotchi.Model.ButtonColor, FallbackValue={StaticResource gradientBrushRainbowButton}}"/>
                 <Setter Property="Foreground" Value="White"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -87,7 +116,7 @@
 
     </Window.Resources>
 
-    <Grid Background="{Binding MyTamagotchi.Model.BackgroundColor}">
+    <Grid Background="{Binding MyTamagotchi.Model.BackgroundColor, FallbackValue={StaticResource gradientBrushRainbowBackground}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
@@ -129,7 +158,7 @@
             <Button Style="{StaticResource MyButton}" Background="#FF9D1515" Content="🍓" Command="{Binding FeedStrawberryCommand}"/>
             <Button Style="{StaticResource MyButton}" Background="#FF2A9D15" Content="🥦" Command="{Binding FeedBrocolliCommand}"/>
             <Button Style="{StaticResource MyButton}" Background="#FFE6A325" Content="🧀" Command="{Binding FeedCheeseCommand}"/>
-            <Button Style="{StaticResource MyButton}" Background="{StaticResource gradientBrushRainbow}" Content="🍭" Command="{Binding FeedLollipopCommand}"/>
+            <Button Style="{StaticResource MyButton}" Background="{StaticResource gradientBrushLollipop}" Content="🍭" Command="{Binding FeedLollipopCommand}"/>
         </UniformGrid>
 
         <UniformGrid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Rows="4" Columns="2">

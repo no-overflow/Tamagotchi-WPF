@@ -27,11 +27,29 @@
             <GradientStop Color="#FF7200FF" Offset="1.0" />
         </LinearGradientBrush>
 
-        
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbowButton">
+            <GradientStop Color="#FFFF2B2B" Offset="0" />
+            <GradientStop Color="#FFFF8100" Offset="0.1" />
+            <GradientStop Color="#FFFFD400" Offset="0.3" />
+            <GradientStop Color="#FF3AFF00" Offset="0.5" />
+            <GradientStop Color="#FF00B5FF" Offset="0.6" />
+            <GradientStop Color="#FF7200FF" Offset="0.9" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrushRainbowBackground">
+            <GradientStop Color="#FFFF8282" Offset="0" />
+            <GradientStop Color="#FFF0912F" Offset="0.1" />
+            <GradientStop Color="#FFFFDC32" Offset="0.3" />
+            <GradientStop Color="#FF84FF5F" Offset="0.5" />
+            <GradientStop Color="#FF4ECCFF" Offset="0.6" />
+            <GradientStop Color="#FFA65EFF" Offset="0.9" />
+        </LinearGradientBrush>
+
+
         <!--https://gist.github.com/alimbada/3083937-->
         <Style x:Key="MyButton" TargetType="{x:Type Button}">
 
-            <Setter Property="Background" Value="{Binding MyTamagotchi.Model.ButtonColor}"/>
+            <Setter Property="Background" Value="{Binding MyTamagotchi.Model.ButtonColor, FallbackValue={StaticResource gradientBrushRainbowButton}}"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -75,7 +93,7 @@
     </Window.Resources>
 
 
-    <Grid Background="{Binding MyTamagotchi.Model.BackgroundColor}">
+    <Grid Background="{Binding MyTamagotchi.Model.BackgroundColor, FallbackValue={StaticResource gradientBrushRainbowBackground}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
@@ -87,14 +105,14 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label FontSize="20" Content="{Binding MyTamagotchi.Name}" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label FontSize="20" Content="{Binding MyTamagotchi.Name}" Grid.Row="0" Grid.ColumnSpan="3" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <UniformGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Rows="2" Columns="3">
             <Label Content="Name" Grid.Row="1" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox Text="{Binding MyTamagotchi.Name}" Height="30" Width="120" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Button Style="{StaticResource MyButton}" Margin="12" Content="Save" Command="{Binding SaveTamagotchiNameCommand}"/>
             <Label Content="Current Color" Grid.Row="1" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label Background="{Binding MyTamagotchi.Model.TamagotchiColor}" Height="30" Width="120" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Background="{Binding MyTamagotchi.Model.TamagotchiColor, FallbackValue={StaticResource gradientBrushRainbow}}" Height="30" Width="120" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </UniformGrid>
 
         <UniformGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Rows="2" Columns="4" Margin="5">
