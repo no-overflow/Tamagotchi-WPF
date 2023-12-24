@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp042.Ui.Desktop"
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600">
+        Title="MainWindow" Height="400" Width="620">
 
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}"
@@ -40,7 +40,7 @@
         </LinearGradientBrush>
 
         <!--https://gist.github.com/alimbada/3083937-->
-            <Style x:Key="BlueButton" TargetType="{x:Type Button}">
+            <Style x:Key="MyButton" TargetType="{x:Type Button}">
 
             <Setter Property="Background" Value="{Binding MyTamagotchi.Model.ButtonColor}"/>
                 <Setter Property="Foreground" Value="White"/>
@@ -123,20 +123,20 @@
         
 
         <Image Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="15" Source="{Binding Path=MyTamagotchi.BindableTamagotchiImage}"/>
-        <Button Grid.Column="6" Grid.Row="1" Height="40" Width="40" Margin="15" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource BlueButton}" Content="⚙️" Command="{Binding OpenEditTamagotchiWindowCommand}"/>
+        <Button Grid.Column="6" Grid.Row="1" Height="40" Width="40" Margin="15" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MyButton}" Content="⚙️" Command="{Binding OpenEditTamagotchiWindowCommand}"/>
         
         <UniformGrid Grid.Column="0" Grid.Row="2" Rows="2" Columns="2">
-            <Button Style="{StaticResource BlueButton}" Background="#FF9D1515" Content="🍓" Command="{Binding FeedStrawberryCommand}"/>
-            <Button Style="{StaticResource BlueButton}" Background="#FF2A9D15" Content="🥦" Command="{Binding FeedBrocolliCommand}"/>
-            <Button Style="{StaticResource BlueButton}" Background="#FFE6A325" Content="🧀" Command="{Binding FeedCheeseCommand}"/>
-            <Button Style="{StaticResource BlueButton}" Background="{StaticResource gradientBrushRainbow}" Content="🍭" Command="{Binding FeedLollipopCommand}"/>
+            <Button Style="{StaticResource MyButton}" Background="#FF9D1515" Content="🍓" Command="{Binding FeedStrawberryCommand}"/>
+            <Button Style="{StaticResource MyButton}" Background="#FF2A9D15" Content="🥦" Command="{Binding FeedBrocolliCommand}"/>
+            <Button Style="{StaticResource MyButton}" Background="#FFE6A325" Content="🧀" Command="{Binding FeedCheeseCommand}"/>
+            <Button Style="{StaticResource MyButton}" Background="{StaticResource gradientBrushRainbow}" Content="🍭" Command="{Binding FeedLollipopCommand}"/>
         </UniformGrid>
 
         <UniformGrid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Rows="4" Columns="2">
-            <Button Style="{StaticResource BlueButton}" Command="{Binding StartGameCommand}" Content="Start Game" Grid.ColumnSpan="2"/>
+            <Button Style="{StaticResource MyButton}" Command="{Binding StartGameCommand}" Content="Start Game" Grid.ColumnSpan="2"/>
             <Label Content="{Binding MyGame.GenNumber}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Style="{StaticResource BlueButton}" Command="{Binding LowerCommand}" Content="Lower"/>
-            <Button Style="{StaticResource BlueButton}" Command="{Binding HigherCommand}" Content="Higher"/>
+            <Button Style="{StaticResource MyButton}" Command="{Binding LowerCommand}" Content="Lower"/>
+            <Button Style="{StaticResource MyButton}" Command="{Binding HigherCommand}" Content="Higher"/>
             <Label Content="Attempts" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Content="{Binding MyGame.Attempts}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Content="Points" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -155,7 +155,7 @@
         <UniformGrid Grid.Column="5" Grid.Row="2" Rows="3">
             <Label FontWeight="Bold" HorizontalAlignment="Center">Health Status</Label>
             <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Text="{Binding MyTamagotchi.InfoText}"></TextBlock>
-            <Button Style="{StaticResource BlueButton}" Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding MedicinCommand}"/>
+            <Button Style="{StaticResource MyButton}" Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding MedicinCommand}"/>
         </UniformGrid>
     
 

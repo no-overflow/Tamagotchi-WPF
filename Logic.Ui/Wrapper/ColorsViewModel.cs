@@ -27,11 +27,59 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         }
 
         public void ChangeColorToRedMethod()
-        { 
-            //Model.BackgroundColor = BackgroundColor;
-            //Model.ButtonColor = ButtonColor;
-
+        {
+            MyTamagotchi.Model.TamagotchiColor = "Red";
+            MyTamagotchi.Model.BackgroundColor = "#f11d1d";
+            MyTamagotchi.Model.ButtonColor = "#cf1717";
+            MyTamagotchi.UpdateTamagotchi();
         }
 
+        public void ChangeColorToOrangeMethod()
+        {
+            MyTamagotchi.Model.TamagotchiColor = "Orange";
+            MyTamagotchi.Model.BackgroundColor = "#f99b23";
+            MyTamagotchi.Model.ButtonColor = "#e78200";
+            MyTamagotchi.UpdateTamagotchi();
+        }
+
+        public void ChangeColorToYellowMethod()
+        {
+            MyTamagotchi.Model.TamagotchiColor = "Yellow";
+            MyTamagotchi.Model.BackgroundColor = "#ffff3d";
+            MyTamagotchi.Model.ButtonColor = "#dcdc00";
+            MyTamagotchi.UpdateTamagotchi();
+        }
+
+        public void ChangeColorToGreenMethod()
+        {
+            MyTamagotchi.Model.TamagotchiColor = "Green";
+            MyTamagotchi.Model.BackgroundColor = "#30e400";
+            MyTamagotchi.Model.ButtonColor = "#23a600";
+            MyTamagotchi.UpdateTamagotchi();
+        }
+
+        public void ChangeColorToBlueMethod()
+        {
+            MyTamagotchi.Model.TamagotchiColor = "Blue";
+            MyTamagotchi.Model.BackgroundColor = "#1E90FF";
+            MyTamagotchi.Model.ButtonColor = "#1e6cff";
+            MyTamagotchi.UpdateTamagotchi();
+        }
+
+        public void ChangeColorToVioletMethod()
+        {
+            MyTamagotchi.Model.TamagotchiColor = "DarkViolet";
+            MyTamagotchi.Model.BackgroundColor = "#820dff";
+            MyTamagotchi.Model.ButtonColor = "#5b00bd";
+            MyTamagotchi.UpdateTamagotchi();
+        }
+
+        public void ChangeColorToRainbowMethod()
+        {
+            MyTamagotchi.Model.TamagotchiColor = "DarkViolet";
+            MyTamagotchi.Model.BackgroundColor = "#820dff";
+            MyTamagotchi.Model.ButtonColor = "#5b00bd";
+            MyTamagotchi.UpdateTamagotchi();
+        }
     }
 }

@@ -42,9 +42,9 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                     Name = "Tamagotchi",
                     LoginTime = DateTime.Now,
                     Birthday = DateTime.Now,
-                    TamagotchiColor = "Yellow",
+                    TamagotchiColor = "Blue",
                     BackgroundColor = "#1E90FF",
-                    ButtonColor = "#FF1572CE"
+                    ButtonColor = "#1e6cff"
                 };
 
                 Console.WriteLine("ModelFileHandler TamagotchiColor: " + MyTamagotchi.TamagotchiColor);
@@ -61,9 +61,9 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                     Name = "Tamagotchi",
                     LoginTime = DateTime.Now,
                     Birthday = DateTime.Now,
-                    TamagotchiColor = "Yellow",
+                    TamagotchiColor = "Blue",
                     BackgroundColor = "#1E90FF",
-                    ButtonColor = "#FF1572CE"
+                    ButtonColor = "#1e6cff"
                 };
                 
                 Console.WriteLine("ModelFileHandler TamagotchiColor: " + MyTamagotchi.TamagotchiColor);
