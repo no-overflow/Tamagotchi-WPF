@@ -39,6 +39,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
 
         public ICommand OpenEditTamagotchiWindowCommand { get; }
 
+        public ICommand ReviveCommand { get; }
+
 
         public TamagotchiViewModel MyTamagotchi { get; set; }
         public GameViewModel MyGame { get; set; }
@@ -57,7 +59,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
-            string projectDirectory2 = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyColors.cc"));
 
             pathForSerialization = projectDirectory;
 
@@ -70,10 +71,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             MyGame = new GameViewModel(MyTamagotchi);
             MyColors = new ColorsViewModel(MyTamagotchi);
 
-            Console.WriteLine("MWVM TamagotchiColor1: " + MyTamagotchi.Model.TamagotchiColor);
-            Console.WriteLine("MWVM BackgroundColor1: " + MyTamagotchi.Model.BackgroundColor);
-
-
             OpenEditTamagotchiWindowCommand = new RelayCommand(OpenEditTamagotchiWindowMethod);
 
             MedicinCommand = new RelayCommand(MyTamagotchi.GiveMedicin);
@@ -83,6 +80,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             FeedCheeseCommand = new RelayCommand(MyTamagotchi.FeedCheese);
             FeedLollipopCommand = new RelayCommand(MyTamagotchi.FeedLollipop);
 
+            ReviveCommand = new RelayCommand(MyTamagotchi.ReviveTamagotchi);
+
             StartGameCommand = new RelayCommand(MyGame.StartGame);
             LowerCommand = new RelayCommand(MyGame.LowerGuess);
             HigherCommand = new RelayCommand(MyGame.HigherGuess);
@@ -90,9 +89,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             MyTamagotchi.CalculateData();
             MyTamagotchi.UpdateTamagotchi();
 
-            Console.WriteLine("MWVM TamagotchiColor: "+MyTamagotchi.Model.TamagotchiColor);
-            Console.WriteLine("MWVM BackgroundColor: " + MyTamagotchi.Model.BackgroundColor);
-            //MyTamagotchi.LoginTime = DateTime.Now;
+            MyTamagotchi.LoginTime = DateTime.Now;
         }
 
 

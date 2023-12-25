@@ -27,9 +27,7 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 Tamagotchi loadedCollection =
                     (Tamagotchi)formatter.Deserialize(
                         streamLoad);
-                Console.WriteLine("loadedCollection-Ausgabe-----------");
-                Console.WriteLine(loadedCollection.BackgroundColor);
-
+               
                 return loadedCollection;
             }
             catch (FileNotFoundException)
@@ -42,12 +40,11 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                     Name = "Tamagotchi",
                     LoginTime = DateTime.Now,
                     Birthday = DateTime.Now,
+                    Alive = true,
                     TamagotchiColor = "Blue",
                     BackgroundColor = "#1E90FF",
                     ButtonColor = "#1e6cff"
                 };
-
-                Console.WriteLine("ModelFileHandler TamagotchiColor: " + MyTamagotchi.TamagotchiColor);
 
                 return MyTamagotchi;
             }
@@ -61,12 +58,11 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                     Name = "Tamagotchi",
                     LoginTime = DateTime.Now,
                     Birthday = DateTime.Now,
+                    Alive = true,
                     TamagotchiColor = "Blue",
                     BackgroundColor = "#1E90FF",
                     ButtonColor = "#1e6cff"
                 };
-                
-                Console.WriteLine("ModelFileHandler TamagotchiColor: " + MyTamagotchi.TamagotchiColor);
 
                 return MyTamagotchi;
             }
@@ -91,7 +87,5 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
             formatter.Serialize(stream, model);
             stream.Close();
         }
-
-       
     }
 }

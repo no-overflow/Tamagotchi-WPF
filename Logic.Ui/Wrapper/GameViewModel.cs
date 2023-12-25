@@ -31,7 +31,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
         public void StartGame()
         {
-            if (!GameStarted)
+            if (!GameStarted && MyTamagotchi.Alive)
             {
                 GameStarted = true;
                 Attempts = 5;

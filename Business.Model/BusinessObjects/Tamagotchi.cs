@@ -33,6 +33,8 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
         public DateTime LoginTime { get { return loginTime; } set { loginTime = value; OnPropertyChanged("LoginTime"); } }
         private DateTime birthday;
         public DateTime Birthday { get { return birthday; } set { birthday = value; OnPropertyChanged("Birthday"); } }
+        private DateTime lastFeeding;
+        public DateTime LastFeeding { get { return lastFeeding; } set { lastFeeding = value; OnPropertyChanged("LastFeeding"); } }
 
         private string infoText;
         public String InfoText { get { return infoText; } set { infoText = value; OnPropertyChanged("InfoText"); } }
@@ -40,8 +42,11 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
         public Image TamagotchiImage { get; set; }
 
         private bool alive;
-        public Boolean Alive { get; set; }
-        
+        public Boolean Alive { get { return alive; } set { alive = value; OnPropertyChanged("Alive"); } }
+
+        private string reviveButtonVisibility;
+        public String ReviveButtonVisibility { get { return reviveButtonVisibility; } set { reviveButtonVisibility = value; OnPropertyChanged("ReviveButtonVisibility"); } }
+
 
         private string tamagotchiColor;
         public String TamagotchiColor { get { return tamagotchiColor; } set { tamagotchiColor = value; OnPropertyChanged("TamagotchiColor"); } }

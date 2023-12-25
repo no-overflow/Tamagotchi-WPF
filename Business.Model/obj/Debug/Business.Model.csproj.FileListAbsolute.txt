@@ -10,3 +10,9 @@ C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogra
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Business.Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Business.Model\obj\Debug\Business.Model.dll
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Business.Model\obj\Debug\Business.Model.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\bin\Debug\Business.Model.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\bin\Debug\Business.Model.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\obj\Debug\Business.Model.csproj.AssemblyReference.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\obj\Debug\Business.Model.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\obj\Debug\Business.Model.pdb
