@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp042.Ui.Desktop"
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="EditTamagotchiWindow" Height="300" Width="380">
+        Title="EditTamagotchiWindow" ResizeMode="NoResize" Height="340" Width="380">
 
         <Window.DataContext>
             <Binding Source="{StaticResource ViewModelLocator}"
@@ -98,6 +98,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -110,7 +111,7 @@
         <UniformGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Rows="2" Columns="3">
             <Label Content="Name" Grid.Row="1" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox Text="{Binding MyTamagotchi.Name}" Height="30" Width="120" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Style="{StaticResource MyButton}" Margin="12" Content="Save" Command="{Binding SaveTamagotchiNameCommand}"/>
+            <Button Style="{StaticResource MyButton}" Margin="12" Content="Save" Command="{Binding SaveTamagotchiCommand}"/>
             <Label Content="Current Color" Grid.Row="1" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Background="{Binding MyTamagotchi.Model.TamagotchiColor, FallbackValue={StaticResource gradientBrushRainbow}}" Height="30" Width="120" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </UniformGrid>
@@ -125,5 +126,8 @@
             <Button Style="{StaticResource MyButton}" Background="DarkViolet" Content="Violet" Command="{Binding ChangeColorToVioletCommand}"/>
             <Button Style="{StaticResource MyButton}" Background="{StaticResource gradientBrushRainbow}" Foreground="Black" Content="Rainbow" Command="{Binding ChangeColorToRainbowCommand}"/>
         </UniformGrid>
+
+        
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource MyButton}" Margin="4" Content="Reset Tamagotchi" Command="{Binding ResetTamagotchiCommand}"/>
     </Grid>
 </Window> 

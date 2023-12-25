@@ -32,7 +32,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
         public String InfoText { get { return Model.InfoText; } set { Model.InfoText = value; OnPropertyChanged("InfoText"); } }
 
-        public ColorsViewModel MyColors { get; set; }
+        //public ColorsViewModel MyColors { get; set; }
 
         public BitmapImage BindableTamagotchiImage
         {
@@ -86,7 +86,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         public TamagotchiViewModel()
         {
             modelFileHandler = new ModelFileHandler();
-            //MyColors = new ColorsViewModel();
 
         }
 
@@ -121,6 +120,14 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             Console.WriteLine("TamagotchiColor: " + Model.TamagotchiColor);
         }
 
+        public void ResetTamagotchi()
+        {
+            Name = "Tamagotchi";
+            Hunger = 0;
+            Happiness = 0;
+            Health = 0;
+            UpdateTamagotchi();
+        }
 
         public void FeedStrawberry()
         {

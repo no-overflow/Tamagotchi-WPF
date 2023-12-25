@@ -18,7 +18,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         public TamagotchiViewModel MyTamagotchi { get; set; }
         public ColorsViewModel MyColors { get; set; }
   
-        public ICommand SaveTamagotchiNameCommand { get; }
+        public ICommand SaveTamagotchiCommand { get; }
+        public ICommand ResetTamagotchiCommand { get; }
         public ICommand ChangeColorToRedCommand { get; }
         public ICommand ChangeColorToOrangeCommand { get; }
         public ICommand ChangeColorToYellowCommand { get; }
@@ -33,7 +34,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             MyTamagotchi = EditMyTamagotchi;
             MyColors = new ColorsViewModel(EditMyTamagotchi);
 
-            SaveTamagotchiNameCommand = new RelayCommand(SaveTamagotchiNameMethod);
+            SaveTamagotchiCommand = new RelayCommand(MyTamagotchi.UpdateTamagotchi);
+            ResetTamagotchiCommand = new RelayCommand(MyTamagotchi.ResetTamagotchi);
             ChangeColorToRedCommand = new RelayCommand(MyColors.ChangeColorToRedMethod);
             ChangeColorToOrangeCommand = new RelayCommand(MyColors.ChangeColorToOrangeMethod);
             ChangeColorToYellowCommand = new RelayCommand(MyColors.ChangeColorToYellowMethod);
@@ -41,14 +43,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             ChangeColorToBlueCommand = new RelayCommand(MyColors.ChangeColorToBlueMethod);
             ChangeColorToVioletCommand = new RelayCommand(MyColors.ChangeColorToVioletMethod);
             ChangeColorToRainbowCommand = new RelayCommand(MyColors.ChangeColorToRainbowMethod);
-
-
         }
 
-        public void SaveTamagotchiNameMethod()
-        {
-            MyTamagotchi.UpdateTamagotchi();
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
