@@ -197,7 +197,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 imagePath = "tamagotchi_" + Model.TamagotchiColor + "_" + Hunger + ".png";
             } else
             {
-                imagePath = "tamagotchi_" + Model.TamagotchiColor + "_" + 100 + ".png"; //Bild mit x als Hungerwert
+                imagePath = "tamagotchi_x.png";
             }
             string fullPath = Path.Combine(projectDirectory, imagePath);
 
@@ -219,9 +219,9 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             TimeSpan ageDifference = DateTime.Now.Subtract(Birthday);
             TimeSpan feedingDifference = DateTime.Now.Subtract(LastFeeding);
             int sinceLogin = (int)(loginDifference.TotalMinutes);
-            int sinceFeeding = (int)(feedingDifference.TotalMinutes);
+            int sinceFeeding = (int)(feedingDifference.TotalDays);
 
-            if (sinceFeeding < 1)
+            if (sinceFeeding < 1 || Hunger > 0 && Health > 0)
             {
                 Alive = true;
                 Age = (int)(ageDifference.TotalDays);
@@ -233,7 +233,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 Alive = false;
                 ReviveButtonVisibility = "Visible";
             }
-
         }
 
         private void CheckData()
