@@ -179,7 +179,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
         {
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Images"));
-            string imagePath = "tamagotchi_" + Hunger + ".png";
+            string imagePath = "tamagotchi_" + Model.TamagotchiColor + "_" + Hunger + ".png";
             string fullPath = Path.Combine(projectDirectory, imagePath);
 
             TamagotchiImage = System.Drawing.Image.FromFile(fullPath);
