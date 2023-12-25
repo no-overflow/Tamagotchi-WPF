@@ -162,7 +162,10 @@
         </UniformGrid>
 
         <UniformGrid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Rows="4" Columns="2">
-            <Button Style="{StaticResource MyButton}" Command="{Binding StartGameCommand}" Content="Start Game" Grid.ColumnSpan="2"/>
+            <Button ToolTip="How to play: There is a number and you have to guess whether the next number generated will be lower or higher. You get one point for each correct guess."
+                    Style="{StaticResource MyButton}" Command="{Binding StartGameCommand}"
+                    Content="Start Game" Grid.ColumnSpan="2"
+            />
             <Label Content="{Binding MyGame.GenNumber}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Button Style="{StaticResource MyButton}" Command="{Binding LowerCommand}" Content="Lower"/>
             <Button Style="{StaticResource MyButton}" Command="{Binding HigherCommand}" Content="Higher"/>
@@ -174,14 +177,14 @@
 
 
         <UniformGrid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2" Rows="3" Columns="2">
-            <Label VerticalAlignment="Center" FontWeight="Bold">Name</Label>
-            <Label VerticalAlignment="Center" Content="{Binding MyTamagotchi.Name}"></Label>
-            <Label VerticalAlignment="Center" FontWeight="Bold">Age (days)</Label>
-            <Label VerticalAlignment="Center" Content="{Binding MyTamagotchi.Age}"></Label>
-            <Label VerticalAlignment="Center" FontWeight="Bold">Birthday</Label>
-            <Label VerticalAlignment="Center" Content="{Binding MyTamagotchi.Birthday}"></Label>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">Name</Label>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="{Binding MyTamagotchi.Name}"></Label>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">Age (days)</Label>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="{Binding MyTamagotchi.Age}"></Label>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">Birthday</Label>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="{Binding MyTamagotchi.Birthday}"></Label>
         </UniformGrid>
-        <UniformGrid Grid.Column="5" Grid.Row="2" Rows="3">
+        <UniformGrid Grid.Column="5" Grid.Row="2" Rows="3" Margin="5">
             <Label FontWeight="Bold" HorizontalAlignment="Center">Health Status</Label>
             <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Text="{Binding MyTamagotchi.InfoText}"></TextBlock>
             <Button Style="{StaticResource MyButton}" Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding MedicinCommand}"/>
