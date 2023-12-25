@@ -27,30 +27,46 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 Tamagotchi loadedCollection =
                     (Tamagotchi)formatter.Deserialize(
                         streamLoad);
+                Console.WriteLine("loadedCollection-Ausgabe-----------");
+                Console.WriteLine(loadedCollection.BackgroundColor);
 
                 return loadedCollection;
             }
             catch (FileNotFoundException)
             {
-                Tamagotchi MyTamagotchi = new Tamagotchi();
-                MyTamagotchi.Hunger = 0;
-                MyTamagotchi.Health = 0;
-                MyTamagotchi.Name = "Tamagotchi";
-                MyTamagotchi.LoginTime = DateTime.Now;
-                MyTamagotchi.Birthday = DateTime.Now;
-                Console.WriteLine(MyTamagotchi.LoginTime);
+                Tamagotchi MyTamagotchi = new Tamagotchi
+                {
+                    Hunger = 0,
+                    Health = 0,
+                    Happiness = 0,
+                    Name = "Tamagotchi",
+                    LoginTime = DateTime.Now,
+                    Birthday = DateTime.Now,
+                    TamagotchiColor = "Blue",
+                    BackgroundColor = "#1E90FF",
+                    ButtonColor = "#1e6cff"
+                };
+
+                Console.WriteLine("ModelFileHandler TamagotchiColor: " + MyTamagotchi.TamagotchiColor);
 
                 return MyTamagotchi;
             }
             catch (Exception ex)
             {
-                Tamagotchi MyTamagotchi = new Tamagotchi();
-                MyTamagotchi.Hunger = 0;
-                MyTamagotchi.Health = 0;
-                MyTamagotchi.Name = "Tamagotchi";
-                MyTamagotchi.LoginTime = DateTime.Now;
-                MyTamagotchi.Birthday = DateTime.Now;
-                Console.WriteLine(MyTamagotchi.LoginTime);
+                Tamagotchi MyTamagotchi = new Tamagotchi
+                {
+                    Hunger = 0,
+                    Health = 0,
+                    Happiness = 0,
+                    Name = "Tamagotchi",
+                    LoginTime = DateTime.Now,
+                    Birthday = DateTime.Now,
+                    TamagotchiColor = "Blue",
+                    BackgroundColor = "#1E90FF",
+                    ButtonColor = "#1e6cff"
+                };
+                
+                Console.WriteLine("ModelFileHandler TamagotchiColor: " + MyTamagotchi.TamagotchiColor);
 
                 return MyTamagotchi;
             }
@@ -60,9 +76,10 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                 {
                     streamLoad.Close();
                 }
-            }
-            
+            } 
         }
+
+
         public void WriteModelToFile(string path, Tamagotchi model)
         {
             IFormatter formatter = new BinaryFormatter();
@@ -74,5 +91,7 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
             formatter.Serialize(stream, model);
             stream.Close();
         }
+
+       
     }
 }

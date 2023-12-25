@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.ComponentModel;
+using System.IO;
+
 
 namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
 {
@@ -39,6 +41,15 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
 
         private bool alive;
         public Boolean Alive { get; set; }
+        
+
+        private string tamagotchiColor;
+        public String TamagotchiColor { get { return tamagotchiColor; } set { tamagotchiColor = value; OnPropertyChanged("TamagotchiColor"); } }
+
+        private string backgroundColor;
+        public String BackgroundColor { get { return backgroundColor; } set { backgroundColor = value; OnPropertyChanged("BackgroundColor"); } }
+        private string buttonColor;
+        public String ButtonColor { get { return buttonColor; } set { buttonColor = value; OnPropertyChanged("ButtonColor"); } }
 
 
 
@@ -55,5 +66,6 @@ namespace De.HsFlensburg.ClientApp042.Business.Model.BusinessObjects
         public event PropertyChangedEventHandler PropertyChanged;
 
 
+        
     }
 }

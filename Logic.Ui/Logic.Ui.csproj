@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -47,10 +48,13 @@
     <Compile Include="Base\IViewModel.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\ViewModelSyncCollection.cs" />
+    <Compile Include="MessageBusMessages\OpenEditTamagotchiWindowMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModels\EditTamagotchiWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Wrapper\ColorsViewModel.cs" />
     <Compile Include="Wrapper\GameViewModel.cs" />
     <Compile Include="Wrapper\TamagotchiViewModel.cs" />
   </ItemGroup>
@@ -69,25 +73,86 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ViewModels\Images\default.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ViewModels\Images\tamagotchi_0.png" />
-    <Content Include="ViewModels\Images\tamagotchi_10.png" />
-    <Content Include="ViewModels\Images\tamagotchi_100.png" />
-    <Content Include="ViewModels\Images\tamagotchi_20.png" />
-    <Content Include="ViewModels\Images\tamagotchi_30.png" />
-    <Content Include="ViewModels\Images\tamagotchi_40.png" />
-    <Content Include="ViewModels\Images\tamagotchi_50.png" />
-    <Content Include="ViewModels\Images\tamagotchi_60.png" />
-    <Content Include="ViewModels\Images\tamagotchi_70.png" />
-    <Content Include="ViewModels\Images\tamagotchi_80.png" />
-    <Content Include="ViewModels\Images\tamagotchi_90.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="ViewModels\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ViewModels\Images\tamagotchi_Blue_0.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_10.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_100.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_20.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_30.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_40.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_50.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_60.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_70.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_80.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Blue_90.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_0.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_10.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_100.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_20.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_30.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_40.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_50.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_60.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_70.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_80.png" />
+    <Content Include="ViewModels\Images\tamagotchi_DarkViolet_90.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_0.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_10.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_100.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_20.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_30.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_40.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_50.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_60.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_70.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_80.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Green_90.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_0.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_10.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_100.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_20.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_30.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_40.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_50.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_60.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_70.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_80.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Orange_90.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_0.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_10.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_100.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_20.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_30.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_40.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_50.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_60.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_70.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_80.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Rainbow_90.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_0.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_10.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_100.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_20.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_30.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_40.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_50.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_60.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_70.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_80.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Red_90.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_0.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_10.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_100.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_20.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_30.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_40.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_50.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_60.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_70.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_80.png" />
+    <Content Include="ViewModels\Images\tamagotchi_Yellow_90.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
