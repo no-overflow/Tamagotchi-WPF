@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp042.Ui.Desktop"
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="EditTamagotchiWindow" ResizeMode="NoResize" Height="340" Width="380">
+        Title="Edit Tamagotchi" ResizeMode="NoResize" Height="340" Width="380">
 
         <Window.DataContext>
             <Binding Source="{StaticResource ViewModelLocator}"

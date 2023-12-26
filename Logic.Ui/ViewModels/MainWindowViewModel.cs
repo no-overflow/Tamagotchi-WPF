@@ -24,7 +24,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         public ModelFileHandler modelFileHandler;
-        private string pathForSerialization;
         public ICommand FeedCommand { get; }
 
         public ICommand FeedStrawberryCommand { get; }
@@ -38,6 +37,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         public ICommand HigherCommand { get; }
 
         public ICommand OpenEditTamagotchiWindowCommand { get; }
+
+        public ICommand ReviveCommand { get; }
 
 
         public TamagotchiViewModel MyTamagotchi { get; set; }
@@ -57,31 +58,24 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
-            string projectDirectory2 = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyColors.cc"));
-
-            pathForSerialization = projectDirectory;
-
             
             MyTamagotchi = new TamagotchiViewModel
             {
-                Model = modelFileHandler.ReadModelFromFile(pathForSerialization)
+                Model = modelFileHandler.ReadModelFromFile(projectDirectory)
             };
 
             MyGame = new GameViewModel(MyTamagotchi);
             MyColors = new ColorsViewModel(MyTamagotchi);
 
-            Console.WriteLine("MWVM TamagotchiColor1: " + MyTamagotchi.Model.TamagotchiColor);
-            Console.WriteLine("MWVM BackgroundColor1: " + MyTamagotchi.Model.BackgroundColor);
-
-
             OpenEditTamagotchiWindowCommand = new RelayCommand(OpenEditTamagotchiWindowMethod);
-
             MedicinCommand = new RelayCommand(MyTamagotchi.GiveMedicin);
 
             FeedStrawberryCommand = new RelayCommand(MyTamagotchi.FeedStrawberry);
             FeedBrocolliCommand = new RelayCommand(MyTamagotchi.FeedBrocolli);
             FeedCheeseCommand = new RelayCommand(MyTamagotchi.FeedCheese);
             FeedLollipopCommand = new RelayCommand(MyTamagotchi.FeedLollipop);
+
+            ReviveCommand = new RelayCommand(MyTamagotchi.ReviveTamagotchi);
 
             StartGameCommand = new RelayCommand(MyGame.StartGame);
             LowerCommand = new RelayCommand(MyGame.LowerGuess);
@@ -90,9 +84,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             MyTamagotchi.CalculateData();
             MyTamagotchi.UpdateTamagotchi();
 
-            Console.WriteLine("MWVM TamagotchiColor: "+MyTamagotchi.Model.TamagotchiColor);
-            Console.WriteLine("MWVM BackgroundColor: " + MyTamagotchi.Model.BackgroundColor);
-            //MyTamagotchi.LoginTime = DateTime.Now;
+            MyTamagotchi.LoginTime = DateTime.Now;
         }
 
 

@@ -31,7 +31,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
         public void StartGame()
         {
-            if (!GameStarted)
+            if (!GameStarted && MyTamagotchi.Alive)
             {
                 GameStarted = true;
                 Attempts = 5;
@@ -48,7 +48,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 {
                     Points++;
                     MyTamagotchi.Happiness += 5;
-                    
                 }
                 Attempts--;
                 GenerateNumbers();
@@ -67,7 +66,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 {
                     Points++;
                     MyTamagotchi.Happiness += 5;
-                    
                 }
                 Attempts--;
                 GenerateNumbers();
@@ -89,10 +87,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             {
                 NextNumber = rnd.Next(1, 10);
             }
-            Console.WriteLine(GenNumber);
-            Console.WriteLine(NextNumber);
-            Console.WriteLine(Attempts);
-            Console.WriteLine(Points);
         }
     }
 }

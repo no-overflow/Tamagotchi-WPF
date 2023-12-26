@@ -24,3 +24,16 @@ C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogra
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Logic.Ui\obj\Debug\Logic.Ui.csproj.CopyComplete
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Logic.Ui\obj\Debug\Logic.Ui.dll
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Logic.Ui\obj\Debug\Logic.Ui.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\bin\Debug\Logic.Ui.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\bin\Debug\Logic.Ui.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\bin\Debug\Business.Model.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\bin\Debug\Services.MessageBus.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\bin\Debug\Services.SerializationService.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\bin\Debug\Business.Model.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\bin\Debug\Services.MessageBus.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\bin\Debug\Services.SerializationService.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\obj\Debug\Logic.Ui.csproj.AssemblyReference.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\obj\Debug\Logic.Ui.csproj.CoreCompileInputs.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\obj\Debug\Logic.Ui.csproj.CopyComplete
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\obj\Debug\Logic.Ui.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Logic.Ui\obj\Debug\Logic.Ui.pdb

@@ -16,3 +16,12 @@ C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogra
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CopyComplete
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Services.SerializationService\obj\Debug\Services.SerializationService.dll
 C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\Tamagotchi-WPF\Services.SerializationService\obj\Debug\Services.SerializationService.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\bin\Debug\Services.SerializationService.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\bin\Debug\Services.SerializationService.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\bin\Debug\Business.Model.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\bin\Debug\Business.Model.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.AssemblyReference.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CoreCompileInputs.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CopyComplete
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\obj\Debug\Services.SerializationService.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.SerializationService\obj\Debug\Services.SerializationService.pdb
