@@ -24,7 +24,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         public ModelFileHandler modelFileHandler;
-        private string pathForSerialization;
         public ICommand FeedCommand { get; }
 
         public ICommand FeedStrawberryCommand { get; }
@@ -59,20 +58,16 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
-
-            pathForSerialization = projectDirectory;
-
             
             MyTamagotchi = new TamagotchiViewModel
             {
-                Model = modelFileHandler.ReadModelFromFile(pathForSerialization)
+                Model = modelFileHandler.ReadModelFromFile(projectDirectory)
             };
 
             MyGame = new GameViewModel(MyTamagotchi);
             MyColors = new ColorsViewModel(MyTamagotchi);
 
             OpenEditTamagotchiWindowCommand = new RelayCommand(OpenEditTamagotchiWindowMethod);
-
             MedicinCommand = new RelayCommand(MyTamagotchi.GiveMedicin);
 
             FeedStrawberryCommand = new RelayCommand(MyTamagotchi.FeedStrawberry);

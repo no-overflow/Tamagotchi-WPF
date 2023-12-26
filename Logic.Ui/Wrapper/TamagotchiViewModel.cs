@@ -79,7 +79,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             throw new NotImplementedException();
         }
 
-        private string pathForSerialization;
         private ModelFileHandler modelFileHandler;
 
         public TamagotchiViewModel()
@@ -95,30 +94,11 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
 
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Data", "MyTamagotchi.cc"));
-            
-
-            pathForSerialization = projectDirectory;
 
             modelFileHandler.WriteModelToFile(
-                pathForSerialization,
+                projectDirectory,
                 Model);
-            
-
-            Console.WriteLine("------ Update Tamagotchi ------");
-            Console.WriteLine("Name: " + Name);
-            Console.WriteLine("Age: " + Age);
-            Console.WriteLine("LoginTime: " + LoginTime);
-            Console.WriteLine("Hunger: " + Hunger);
-            Console.WriteLine("Health: " + Health);
-            Console.WriteLine("Happiness: " + Happiness);
-            Console.WriteLine("InfoText: " + InfoText);
-            Console.WriteLine("Birthday: " + Birthday);
-            Console.WriteLine("LastFeeding: " + LastFeeding);
-            Console.WriteLine("Alive: " + Alive);
-
-            Console.WriteLine("TamagotchiColor: " + Model.TamagotchiColor);
         }
-
         public void ResetTamagotchi()
         {
             Name = "Tamagotchi";
@@ -128,7 +108,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             Alive = true;
             UpdateTamagotchi();
         }
-
         public void FeedStrawberry()
         {
             if (Hunger < 100 && Alive)
@@ -140,7 +119,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 UpdateTamagotchi();
             }
         }
-
         public void FeedBrocolli()
         {
             if (Hunger < 100 && Alive)
@@ -152,7 +130,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 UpdateTamagotchi();
             }
         }
-
         public void FeedCheese()
         {
             if (Hunger < 100 && Alive)
@@ -164,7 +141,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 UpdateTamagotchi();
             }
         }
-
         public void FeedLollipop()
         {
             if (Hunger < 100 && Alive)
@@ -185,11 +161,9 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 UpdateTamagotchi();
             }
         }
-
         private void SetImage()
         {
-            string workingDirectory = Environment.CurrentDirectory;
-            string projectDirectory = Path.GetFullPath(Path.Combine(workingDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Images"));
+            string projectDirectory = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "..\\..\\..\\", "Logic.UI", "ViewModels", "Images"));
             string imagePath;
 
             if (Alive)
@@ -200,11 +174,8 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 imagePath = "tamagotchi_x.png";
             }
             string fullPath = Path.Combine(projectDirectory, imagePath);
-
             TamagotchiImage = System.Drawing.Image.FromFile(fullPath);
-
         }
-
         public void ReviveTamagotchi()
         {
             Alive = true;
@@ -212,7 +183,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             Birthday = DateTime.Now;
             UpdateTamagotchi();
         }
-
         public void CalculateData()
         {
             TimeSpan loginDifference = DateTime.Now.Subtract(LoginTime);
@@ -221,20 +191,23 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             int sinceLogin = (int)(loginDifference.TotalMinutes);
             int sinceFeeding = (int)(feedingDifference.TotalDays);
 
-            if (sinceFeeding < 1 || Hunger > 0 && Health > 0)
+            Health -= (sinceLogin / 10);
+            Hunger -= (sinceLogin / 10);
+            Happiness -= (sinceLogin / 10);
+
+            if (sinceFeeding < 1 && Hunger > 0 && Health > 0)
             {
                 Alive = true;
                 Age = (int)(ageDifference.TotalDays);
-                Health -= (sinceLogin / 5);
-                Hunger -= (sinceLogin / 5);
-                Happiness -= (sinceLogin / 5);
             } else
             {
                 Alive = false;
+                Health = 0;
+                Hunger = 0;
+                Happiness = 0;
                 ReviveButtonVisibility = "Visible";
             }
         }
-
         private void CheckData()
         {
             Health = Health < 0 ? 0 : (Health > 100 ? 100 : Health);
@@ -242,7 +215,6 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
             Hunger = 10 * (int)Math.Floor(Hunger / 10.0);
             Happiness = Happiness < 0 ? 0 : (Happiness > 100 ? 100 : Happiness);
         }
-
         private void CheckHealth()
         {
             if (Alive)
@@ -253,6 +225,5 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 InfoText = "Your Tamagotchi is dead!";
             }
         }
-
     }
 }
