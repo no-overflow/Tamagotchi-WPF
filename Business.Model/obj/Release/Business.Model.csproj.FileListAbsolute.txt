@@ -1,0 +1,6 @@
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\bin\Release\Business.Model.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\bin\Release\Business.Model.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\obj\Release\Business.Model.csproj.AssemblyReference.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\obj\Release\Business.Model.csproj.CoreCompileInputs.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\obj\Release\Business.Model.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Business.Model\obj\Release\Business.Model.pdb

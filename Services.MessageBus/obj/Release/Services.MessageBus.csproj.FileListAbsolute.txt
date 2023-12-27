@@ -1,0 +1,6 @@
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.MessageBus\bin\Release\Services.MessageBus.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.MessageBus\bin\Release\Services.MessageBus.pdb
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.MessageBus\obj\Release\Services.MessageBus.csproj.AssemblyReference.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.MessageBus\obj\Release\Services.MessageBus.csproj.CoreCompileInputs.cache
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.MessageBus\obj\Release\Services.MessageBus.dll
+C:\Users\Henrike\Documents\Studium - Infos\Dokumente\WiSe 23-24\Anwendungsprogrammierung\Tamagotchi\2\Tamagotchi-WPF\Services.MessageBus\obj\Release\Services.MessageBus.pdb
