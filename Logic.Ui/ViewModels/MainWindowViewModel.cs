@@ -27,7 +27,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
         public ICommand FeedCommand { get; }
 
         public ICommand FeedStrawberryCommand { get; }
-        public ICommand FeedBrocolliCommand { get; }
+        public ICommand FeedBroccoliCommand { get; }
         public ICommand FeedCheeseCommand { get; }
         public ICommand FeedLollipopCommand { get; }
 
@@ -71,7 +71,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.ViewModels
             MedicinCommand = new RelayCommand(MyTamagotchi.GiveMedicin);
 
             FeedStrawberryCommand = new RelayCommand(MyTamagotchi.FeedStrawberry);
-            FeedBrocolliCommand = new RelayCommand(MyTamagotchi.FeedBrocolli);
+            FeedBroccoliCommand = new RelayCommand(MyTamagotchi.FeedBroccoli);
             FeedCheeseCommand = new RelayCommand(MyTamagotchi.FeedCheese);
             FeedLollipopCommand = new RelayCommand(MyTamagotchi.FeedLollipop);
 

@@ -119,7 +119,7 @@ namespace De.HsFlensburg.ClientApp042.Logic.Ui.Wrapper
                 UpdateTamagotchi();
             }
         }
-        public void FeedBrocolli()
+        public void FeedBroccoli()
         {
             if (Hunger < 100 && Alive)
             {

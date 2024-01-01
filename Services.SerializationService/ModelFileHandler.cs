@@ -43,7 +43,8 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                     Alive = true,
                     TamagotchiColor = "Blue",
                     BackgroundColor = "#1E90FF",
-                    ButtonColor = "#1e6cff"
+                    ButtonColor = "#1e6cff",
+                    ReviveButtonVisibility = "Hidden"
                 };
 
                 return MyTamagotchi;
@@ -61,7 +62,8 @@ namespace De.HsFlensburg.ClientApp042.Services.SerializationService
                     Alive = true,
                     TamagotchiColor = "Blue",
                     BackgroundColor = "#1E90FF",
-                    ButtonColor = "#1e6cff"
+                    ButtonColor = "#1e6cff",
+                    ReviveButtonVisibility = "Hidden"
                 };
 
                 return MyTamagotchi;

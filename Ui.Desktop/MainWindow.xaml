@@ -162,7 +162,7 @@
         
         <UniformGrid Grid.Column="0" Grid.Row="2" Rows="2" Columns="2">
             <Button Style="{StaticResource MyButton}" Background="#FF9D1515" Content="🍓" Command="{Binding FeedStrawberryCommand}"/>
-            <Button Style="{StaticResource MyButton}" Background="#FF2A9D15" Content="🥦" Command="{Binding FeedBrocolliCommand}"/>
+            <Button Style="{StaticResource MyButton}" Background="#FF2A9D15" Content="🥦" Command="{Binding FeedBroccoliCommand}"/>
             <Button Style="{StaticResource MyButton}" Background="#FFE6A325" Content="🧀" Command="{Binding FeedCheeseCommand}"/>
             <Button Style="{StaticResource MyButton}" Background="{StaticResource gradientBrushLollipop}" Content="🍭" Command="{Binding FeedLollipopCommand}"/>
         </UniformGrid>
